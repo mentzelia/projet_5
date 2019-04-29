@@ -1,0 +1,153 @@
+body {
+    
+    font-family: 'Open Sans', sans-serif;
+    margin: 1%;
+    padding: 1%;
+    
+}
+
+header {
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+}
+
+#logo {
+    
+    width: 30%;
+    
+}
+
+li {
+    
+    list-style-type: none;
+    
+}
+
+a {
+    
+    text-decoration: none;
+    
+    
+}
+
+main {
+    
+    display: flex;
+    flex-flow: row wrap;
+  
+    
+}
+
+article {
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    
+}
+
+#name {
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    color: #fb5353;
+    letter-spacing: -3px;
+    margin-bottom: 105px;
+    
+}
+
+
+section {
+    
+    width: 500px;
+    height: 400px;
+    margin: 5%;
+    padding: 2%;
+    
+}
+
+.image-section {
+    
+    background-color: rgba(54, 54, 56, 0.2);
+    
+}
+
+.image {
+    
+    width: 500px;
+    margin: auto;
+    padding: auto;    
+    
+}
+
+figure {
+    
+    margin-inline-start: 0px;
+    
+}
+
+figcaption {
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.more-link {
+    
+    color: black;
+    
+}
+
+.hidden-description {
+    
+    display: none;
+    
+}
+
+section:hover .more-link {
+    
+    margin: 2%;
+    padding: 2%;
+    border: solid 1px white;
+
+}
+
+section:hover .hidden-description {
+    
+    display: block;
+    
+}
+
+
+section:hover .carre {
+    
+    display: block;    
+    width: 500px;
+    height: 400px;
+    /* background-color: rgba(251, 83, 83, 0.8); */
+    border: solid 1px white;
+    position: absolute;
+    
+}
+
+section:hover {
+    
+    background-color: rgba(251, 83, 83, 0.8);
+    
+}
+
+section:hover h2, section:hover .hidden-description, section:hover .more-link {
+    
+    color: rgb(255, 255, 255);
+    z-index: 10;
+
+}
+
