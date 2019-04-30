@@ -306,3 +306,8 @@ h2 {
     width: 100%;
     margin: 5%;
 }
+
+.social-icons li a:hover {
+    
+    color: rgba(251, 83, 83, 0.8); 
+}
