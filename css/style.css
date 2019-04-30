@@ -12,19 +12,19 @@ header, .header-nav ul, main, .text-section, article, .image-section, .about-sec
     
 }
 
-.overlay-color, .more-link {
+.more-link {
     
     display: none;
     
 }
 
-section:hover .overlay-color, .image-section:hover .more-link {
+.image-section:hover .more-link {
     
     display: block;
     
 }
 
-section:hover .overlay-color, .portrait:hover .portrait-overlay {
+.overlay-color, .portrait:hover .portrait-overlay {
     
     position: absolute;
 }
@@ -111,6 +111,7 @@ article {
 .image-section {
     
     background-color: rgba(54, 54, 56, 0.2);
+    position: relative;
     
 }
 
@@ -127,11 +128,25 @@ figure {
     
 }
 
-section:hover .overlay-color {
+.overlay-color {
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 0;
     
-    width: 500px;
-    height: 235px;
-    background-color: rgba(251, 83, 83, 0.8);    
+    
+}
+
+.image-section:hover .overlay-color {
+    
+    background-color: rgba(251, 83, 83, 0.8);
+    opacity: 0.8;
+    transition-property: opacity;
+    transition-duration: 1s;
+    
     
 }
 
@@ -156,12 +171,6 @@ h2 {
     padding: 2%;
     border: solid 1px white;
      
-}
-
-.image-section:hover {
-    
-    background-color: rgba(251, 83, 83, 0.8);
-        
 }
 
 .image-section:hover h2, .image-section:hover .description, .image-section:hover .more-link {
