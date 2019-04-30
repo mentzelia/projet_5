@@ -1,23 +1,50 @@
 body {
     
     font-family: 'Open Sans', sans-serif;
-    margin: 1%;
-    padding: 1%;
+    margin: auto;
+    padding: auto;
     
+}
+
+header, main, .text-section, article, .image-section, .about-section, figcaption, .contact-form, #cform {
+    
+    display: flex;
+    
+}
+
+.overlay-color, .more-link, .portrait-overlay {
+    
+    display: none;
+    
+}
+
+section:hover .overlay-color, .image-section:hover .more-link, .image-section:hover .carre, .portrait:hover .portrait-overlay   {
+    
+    display: block;
+    
+}
+
+section:hover .overlay-color, .image-section:hover .carre, .portrait:hover .portrait-overlay {
+    
+    position: absolute;
 }
 
 header {
     
-    display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    
+}
+
+#logo, nav {
+    
+    margin: 3%;
     
 }
 
 #logo {
     
     width: 30%;
-    
 }
 
 li {
@@ -29,21 +56,20 @@ li {
 a {
     
     text-decoration: none;
+    color: black;
     
 }
 
 main {
     
-    display: flex;
     flex-flow: row wrap;
     
 }
 
-section, article {
+.text-section, article, .image-section, .about-section, .contact-form {
     
-    display: flex;
     flex-flow: column nowrap;
-     justify-content: center;
+    justify-content: center;
     
 }
 
@@ -51,12 +77,6 @@ article {
     
     align-items: flex-start;
    
-}
-
-section {
-    
-    align-items: center;
-    
 }
 
 #name {
@@ -69,9 +89,9 @@ section {
     
 }
 
-
-section {
+.text-section, .image-section, .about-section, .map {
     
+    align-items: center;    
     width: 500px;
     height: 400px;
     margin: 5%;
@@ -97,16 +117,8 @@ figure {
     
 }
 
-.overlay-color {
-    
-    display: none;
-    
-}
-
 section:hover .overlay-color {
     
-    display: block;
-    position: absolute;
     width: 500px;
     height: 235px;
     background-color: rgba(251, 83, 83, 0.8);    
@@ -115,7 +127,6 @@ section:hover .overlay-color {
 
 figcaption {
     
-    display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
@@ -129,15 +140,8 @@ h2 {
 
 }
 
-.more-link {
-    
-    display: none;
-    
-}
-
 .image-section:hover .more-link {
     
-    display: block;
     margin: 1%;
     padding: 2%;
     border: solid 1px white;
@@ -145,12 +149,10 @@ h2 {
 }
 
 .image-section:hover .carre {
-    
-    display: block;    
+        
     width: 500px;
     height: 400px;
     border: solid 2px white;
-    position: absolute;
     z-index: 9;
        
 }
@@ -168,11 +170,6 @@ h2 {
     
 }
 
-
-
-
-/*css page a propos */
-
 .portrait img {
     
     width: 250px;
@@ -180,23 +177,15 @@ h2 {
     box-shadow: 10px 10px 10px rgba(251, 83, 83, 0.8);
 }
 
-.portrait-overlay {
-    
-    display: none;
-    
-}
-
 .portrait:hover .portrait-overlay {
     
-    display: block;
-    position: absolute;
     width: 250px;
     height: 250px;
     background-color: rgba(251, 83, 83, 0.6);    
     
 }
 
-.about-section {
+.about-section, .contact-form {
     
     background-color: rgba(251, 83, 83, 0.8);
     
@@ -215,7 +204,7 @@ h2 {
     margin-left: 25px;
 }
 
-.author-description p, .quote {
+.author-description p, .quote, #form-title, .button {
     
     color: rgb(255, 255, 255);
 }
@@ -225,4 +214,66 @@ h2 {
     margin: 8% 0%;
     text-align: right;
     font-style: italic;
+    
+}
+
+.button {
+    
+    margin: 3%;
+    margin-top: 15%;
+    padding: 3%;
+    background-color: rgba(251, 83, 83, 0.8);
+    align-self: center;
+    border: solid 2px rgb(255, 255, 255);
+    
+    
+}
+
+.button:hover {
+    
+    border: solid 2px rgba(251, 83, 83, 0.8);
+    color: rgba(251, 83, 83, 0.8);
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.button:active {
+    
+    border: solid 2px rgba(255, 255, 255, 0);
+}
+
+.map {
+    
+    border: solid 1px black;
+    
+}
+
+.contact-form {
+    
+    width: 100%;
+    height: 500px;
+    align-items: center;
+}
+
+#cform {
+    
+    width: 650px;
+    margin: 5%;
+    padding: 5%;
+    flex-flow: column wrap;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+#input-name, #input-email, #input-comments, #send-button {
+    
+    margin: 4%;
+}
+
+#send-button {
+    
+    width: 15%;
+    align-self: flex-end;
 }
