@@ -12,19 +12,19 @@ header, .header-nav ul, main, .text-section, article, .image-section, .about-sec
     
 }
 
-.overlay-color, .more-link, .portrait-overlay {
+.overlay-color, .more-link {
     
     display: none;
     
 }
 
-section:hover .overlay-color, .image-section:hover .more-link, .image-section:hover .carre, .portrait:hover .portrait-overlay   {
+section:hover .overlay-color, .image-section:hover .more-link {
     
     display: block;
     
 }
 
-section:hover .overlay-color, .image-section:hover .carre, .portrait:hover .portrait-overlay {
+section:hover .overlay-color, .portrait:hover .portrait-overlay {
     
     position: absolute;
 }
@@ -90,8 +90,9 @@ article {
 #name {
     
     font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
     font-size: 56px;
-    color: #fb5353;
+    color: rgb(251, 83, 83);
     letter-spacing: -3px;
     margin-bottom: 105px;
     
@@ -115,7 +116,8 @@ article {
 
 figure {
     
-    margin-inline-start: 0px;
+    margin: 0px;
+    border: solid 2px rgb(255, 255, 255);
     
 }
 
@@ -156,15 +158,6 @@ h2 {
      
 }
 
-.image-section:hover .carre {
-        
-    width: 500px;
-    height: 400px;
-    border: solid 2px white;
-    z-index: 9;
-       
-}
-
 .image-section:hover {
     
     background-color: rgba(251, 83, 83, 0.8);
@@ -185,11 +178,21 @@ h2 {
     box-shadow: 10px 10px 10px rgba(251, 83, 83, 0.8);
 }
 
+.portrait-overlay {
+    
+    display: block;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 2s;
+    
+}
+
 .portrait:hover .portrait-overlay {
     
     width: 250px;
     height: 250px;
-    background-color: rgba(251, 83, 83, 0.6);    
+    background-color: rgba(251, 83, 83, 0.6);
+    opacity: 0.8;
     
 }
 
