@@ -6,7 +6,7 @@ body {
     
 }
 
-header, .header-nav ul, main, .text-section, article, .image-section, .about-section, figcaption, .contact-form, #cform, footer, .social-icons {
+header, .header-nav ul, main, .text-section, article, .image-section, .about-section, figcaption, .contact-form, #cform, footer, .social-icons, .project-section, .thumbnails {
     
     display: flex;
     
@@ -74,7 +74,7 @@ main, .header-nav ul {
     
 }
 
-.text-section, article, .image-section, .about-section, .contact-form {
+.text-section, article, .image-section, .about-section, .contact-form , .project-section, .thumbnails {
     
     flex-flow: column nowrap;
     justify-content: center;
@@ -83,7 +83,7 @@ main, .header-nav ul {
 
 article {
     
-    align-items: flex-start;
+    align-items: center;
    
 }
 
@@ -98,6 +98,13 @@ article {
     
 }
 
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 26px;
+    text-align: center;
+    
+}
+
 .text-section, .image-section, .about-section, .map {
     
     align-items: center;    
@@ -108,7 +115,7 @@ article {
     
 }
 
-.image-section {
+.image-section, .project-section {
     
     background-color: rgba(54, 54, 56, 0.2);
     position: relative;
@@ -314,12 +321,49 @@ h2 {
     align-self: flex-end;
 }
 
-.social-icons li {
+.social-icons li, .online-link {
     width: 100%;
     margin: 5%;
 }
 
-.social-icons li a:hover {
+.social-icons li a:hover, .online-link, .online-link a {
     
     color: rgba(251, 83, 83, 0.8); 
+}
+
+.online-link, .online-link a {
+    
+    padding: 5%;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    
+}
+
+.project-section {
+    
+    width: 35%;
+    height: auto;
+    align-items: center;    
+    margin: 5%;
+    padding: 2%;
+    
+}
+.thumbnails img {
+    
+    width: 90%;
+    margin: 5%;
+    box-shadow: 5px 5px 5px black;
+    align-self: center;
+}
+
+.project-section article p {
+    
+    text-align: center;
+}
+
+.skills {
+    
+    font-weight: bolder;
+
 }
