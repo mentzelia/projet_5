@@ -76,17 +76,31 @@ section {
     
 }
 
-.image {
-    
-    width: 500px;
-    margin: auto;
-    padding: auto;    
-    
-}
-
 figure {
     
     margin-inline-start: 0px;
+    
+}
+
+.image {
+    
+    width: 500px;    
+    
+}
+
+.overlay-color {
+    
+    display: none;
+    
+}
+
+section:hover .overlay-color {
+    
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 235px;
+    background-color: rgba(251, 83, 83, 0.8);    
     
 }
 
@@ -97,57 +111,51 @@ figcaption {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 3%;
     
+}
+
+h2 {
+    margin-bottom: 0%;
+
 }
 
 .more-link {
-    
-    color: black;
-    
-}
-
-.hidden-description {
     
     display: none;
     
 }
 
-section:hover .more-link {
-    
-    margin: 2%;
-    padding: 2%;
-    border: solid 1px white;
-
-}
-
-section:hover .hidden-description {
+.image-section:hover .more-link {
     
     display: block;
-    
+    margin: 1%;
+    padding: 2%;
+    border: solid 1px white;
+     
 }
 
-
-section:hover .carre {
+.image-section:hover .carre {
     
     display: block;    
     width: 500px;
     height: 400px;
-    /* background-color: rgba(251, 83, 83, 0.8); */
-    border: solid 1px white;
+    border: solid 2px white;
     position: absolute;
-    
+    z-index: 9;
+       
 }
 
-section:hover {
+.image-section:hover {
     
     background-color: rgba(251, 83, 83, 0.8);
-    
+        
 }
 
-section:hover h2, section:hover .hidden-description, section:hover .more-link {
+.image-section:hover h2, .image-section:hover .description, .image-section:hover .more-link {
     
     color: rgb(255, 255, 255);
     z-index: 10;
-
+    
 }
 
