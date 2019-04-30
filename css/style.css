@@ -30,23 +30,32 @@ a {
     
     text-decoration: none;
     
-    
 }
 
 main {
     
     display: flex;
     flex-flow: row wrap;
-  
+    
+}
+
+section, article {
+    
+    display: flex;
+    flex-flow: column nowrap;
+     justify-content: center;
     
 }
 
 article {
     
-    display: flex;
-    flex-flow: column nowrap;
     align-items: flex-start;
-    justify-content: center;
+   
+}
+
+section {
+    
+    align-items: center;
     
 }
 
@@ -159,3 +168,61 @@ h2 {
     
 }
 
+
+
+
+/*css page a propos */
+
+.portrait img {
+    
+    width: 250px;
+    height: 250px;
+    box-shadow: 10px 10px 10px rgba(251, 83, 83, 0.8);
+}
+
+.portrait-overlay {
+    
+    display: none;
+    
+}
+
+.portrait:hover .portrait-overlay {
+    
+    display: block;
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(251, 83, 83, 0.6);    
+    
+}
+
+.about-section {
+    
+    background-color: rgba(251, 83, 83, 0.8);
+    
+}
+
+.author-description {
+    
+    border: 2px solid rgb(255, 255, 255);
+    padding: 2%;
+    text-align: justify;
+    
+}
+
+.tabulation {
+    
+    margin-left: 25px;
+}
+
+.author-description p, .quote {
+    
+    color: rgb(255, 255, 255);
+}
+
+.quote {
+    
+    margin: 8% 0%;
+    text-align: right;
+    font-style: italic;
+}
