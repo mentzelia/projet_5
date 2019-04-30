@@ -6,7 +6,7 @@ body {
     
 }
 
-header, main, .text-section, article, .image-section, .about-section, figcaption, .contact-form, #cform {
+header, .header-nav ul, main, .text-section, article, .image-section, .about-section, figcaption, .contact-form, #cform, footer, .social-icons {
     
     display: flex;
     
@@ -29,22 +29,30 @@ section:hover .overlay-color, .image-section:hover .carre, .portrait:hover .port
     position: absolute;
 }
 
-header {
+header, .social-icons {
     
     flex-flow: row nowrap;
     justify-content: space-between;
     
 }
 
-#logo, nav {
+#logo, .header-nav {
     
     margin: 3%;
+    width: 30%;
     
 }
 
-#logo {
+.nav-active a {
     
-    width: 30%;
+    color: rgba(251, 83, 83, 0.8);
+    font-weight: bold;
+    
+}
+
+.header-nav ul {
+    
+    justify-content: space-around;
 }
 
 li {
@@ -60,7 +68,7 @@ a {
     
 }
 
-main {
+main, .header-nav ul {
     
     flex-flow: row wrap;
     
@@ -125,7 +133,7 @@ section:hover .overlay-color {
     
 }
 
-figcaption {
+figcaption, footer {
     
     flex-flow: column nowrap;
     align-items: center;
@@ -217,24 +225,40 @@ h2 {
     
 }
 
+.button, #send-button {
+    
+    border: solid 2px rgb(255, 255, 255);
+    background-color: rgba(251, 83, 83, 0.8);
+    padding: 3%;
+    
+    
+}
 .button {
     
     margin: 3%;
     margin-top: 15%;
-    padding: 3%;
-    background-color: rgba(251, 83, 83, 0.8);
-    align-self: center;
-    border: solid 2px rgb(255, 255, 255);
-    
+    align-self: center; 
     
 }
 
-.button:hover {
+.button a, #send-button {
+    
+    color: rgb(255, 255, 255); 
+    font-weight: 800;
+}
+
+.button:hover, #send-button:hover {
     
     border: solid 2px rgba(251, 83, 83, 0.8);
     color: rgba(251, 83, 83, 0.8);
     background-color: rgb(255, 255, 255);
     
+}
+
+.button:hover a, #send-button:hover {
+    
+    color: rgba(251, 83, 83, 0.8);
+    font-weight: 800;
 }
 
 .button:active {
@@ -274,6 +298,11 @@ h2 {
 
 #send-button {
     
-    width: 15%;
+    width: 25%;
     align-self: flex-end;
+}
+
+.social-icons li {
+    width: 100%;
+    margin: 5%;
 }
