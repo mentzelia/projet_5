@@ -12,10 +12,10 @@
 
         <title><?= $title ?></title>
         
-        <link rel="icon" href="../../public/images/favicon.ico" type="image/x-icon">
-        <link href="../../public/css/normalize.css" rel="stylesheet" type="text/css">
-        <link href="../../public/css/style.css" rel="stylesheet" type="text/css">
-        <link href="../../public/css/responsive.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="public/images/favicon.ico" type="image/x-icon">
+        <link href="public/css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="public/css/style.css" rel="stylesheet" type="text/css">
+        <link href="public/css/responsive.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
                 
             <h1>
 
-                <a href="accueil.php"><img class="logo" src="../../public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
+                <a href="listProjectsView.php"><img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
 
             </h1>
 
@@ -36,13 +36,13 @@
 
                 <ul>
 
-                    <li><a href="accueil.php">Portfolio</a></li>
+                    <li><a href="view/frontend/listProjectsView.php">Portfolio</a></li>
 
-                    <li class="nav-active"><a href="apropos.php">A Propos</a></li>
+                    <li class="nav-active"><a href="view/frontend/aboutView.php">A Propos</a></li>
                     
-                    <li><a href="devis.php">Devis en ligne</a></li>
+                    <li><a href="view/frontend/quotationView.php">Devis en ligne</a></li>
 
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="view/frontend/contactView.php">Contact</a></li>
 
                 </ul>
 
@@ -60,7 +60,7 @@
 
                  <h1>
 
-                     <a href="accueil.php"><img class="logo" src="../../public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
+                     <a href="view/frontend/listProjectsView.php"><img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
 
                  </h1>
 
@@ -68,15 +68,15 @@
 
                      <ul>
 
-                        <li><a href="accueil.php">Portfolio</a></li>
+                        <li><a href="view/frontend/listProjectsView.php">Portfolio</a></li>
 
-                        <li class="nav-active"><a href="apropos.php">A Propos</a></li>
+                        <li class="nav-active"><a href="view/frontend/aboutView.php">A Propos</a></li>
 
-                        <li><a href="devis.php">Devis en ligne</a></li>
+                        <li><a href="view/frontend/quotationView.php">Devis en ligne</a></li>
 
-                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="view/frontend/contactView.php">Contact</a></li>
 
-                        <li><a href="connexion.php">Se connecter</a></li>
+                        <li><a href="view/frontend/loginView.php">Se connecter</a></li>
 
                     </ul>
 
