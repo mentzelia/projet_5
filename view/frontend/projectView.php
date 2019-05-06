@@ -1,7 +1,8 @@
-<?php $title = 'Portfolio Virginie Duboscq - Projet';
+<?php $title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
 
-ob_start(); 
-?>
+<?php ob_start(); ?>
+
+<p><a href="index.php">Retour</a></p>
 
             
 <section class="text-section">
@@ -10,7 +11,7 @@ ob_start();
 
         <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
-        <p class="online-link"><i class="fas fa-chalkboard-teacher"><a href="<?= $data['website_link'] ?>" target="_blank">Voir le projet en ligne</a></i></p>
+        <p class="online-link"><i class="fas fa-chalkboard-teacher"><a href="<?= $project['website_link'] ?>" target="_blank">Voir le projet en ligne</a></i></p>
 
     </article>
 
@@ -20,7 +21,8 @@ ob_start();
 
     <article>
 
-        <h2>Projet 1: Intégration d'une maquette</h2>
+        <h2>Projet <?= $project['id'] ?>: <?= $project['project_title'] ?></h2>
+
 
         <div class="thumbnails">
 
@@ -31,14 +33,15 @@ ob_start();
         </div>
 
         <p>
-            <?= nl2br($data['complete_description']) ?>
+            <?= nl2br($project['complete_description']) ?>
         </p>
         
-        <p class="skills"><span>Compétences nécessaires pour ce projet: </span><?= $data['skills'] ?>.</p>
+        <p class="skills"><span>Compétences nécessaires pour ce projet: </span><?= $project['skills'] ?>.</p>
 
     </article>
 
 </section>
+
             
         <?php $content = ob_get_clean(); ?>
 

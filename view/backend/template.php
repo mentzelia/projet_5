@@ -22,40 +22,14 @@
         
     </head>
     
+     
     <body>
-        
-        <header>
-                
-            <h1>
-
-                <a href="index.php"><img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
-
-            </h1>
-
-            <nav class="header-nav">
-
-                <ul>
-
-                    <li><a href="index.php">Portfolio</a></li>
-
-                    <li class="nav-active"><a href="index.php?action=about">A Propos</a></li>
-                    
-                    <li><a href="index.php?action=quotation">Devis en ligne</a></li>
-
-                    <li><a href="index.php?action=contact">Contact</a></li>
-
-                </ul>
-
-            </nav>
-         
-        </header>
-        
         <main>
         
             <?= $content ?>
-        
+            
         </main>
-        
+         
         <footer>
 
                  <h1>
@@ -76,9 +50,7 @@
 
                         <li><a href="index.php?action=contact">Contact</a></li>
 
-                        <li><a href="index.php?action=register">Créer un compte</a></li>
-                         
-                        <li><a href="index.php?action=log_in">Se connecter</a></li>
+                        <li><a href="index.php?action=log_out">Se déconnecter</a></li>
 
                     </ul>
 

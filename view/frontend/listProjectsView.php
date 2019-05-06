@@ -16,11 +16,11 @@ ob_start();
 </section>
 
 
-
 <?php
 while ($data = $projects->fetch())
 {
 ?>
+
 
 <section class="image-section">
 
@@ -31,12 +31,12 @@ while ($data = $projects->fetch())
         <img class="image" src="public/images/home-images/image1.png" alt="image du projet d'une agence web" />
 
         <figcaption>
-
+            
             <h2><span>Projet <?= $data['id'] ?>: </span><?= $data['project_title'] ?></h2>
 
             <p class="description"><?= $data['short_description'] ?></p>
 
-            <a class="more-link" href="projet.php">Découvrir le projet</a>
+            <a class="more-link" href="index.php?action=project&id=<?= $data['id'] ?>">Découvrir le projet</a>
 
         </figcaption>
 
