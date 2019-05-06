@@ -13,7 +13,7 @@ ob_start();
         <p><span style="font-weight:bold"><i class="fa fa-phone"></i> +33(0)6 33 33 33 00</span></p>
         <p><span style="font-weight:bold"><a href="mailto:contact@caduceecreations.com"><i class="fa fa-envelope"></i> contact@caduceecreations.com</a></span></p>
 
-        <p class="button"><a href="">Simuler un devis en ligne</a></p>
+        <p class="button"><a href="index.php?action=quotation">Simuler un devis en ligne</a></p>
 
 
     </article>
