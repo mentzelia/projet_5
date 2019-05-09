@@ -25,10 +25,20 @@
 
 
         <div class="thumbnails">
+            
+<?php
+while ($data = $pictures->fetch())
+{
+?>
 
-            <img class="image" src="../../public/images/projects/project1/project1_1.png" alt="image de la premiere section du projet 1" />
+            <img class="image" src="<?= $data['src'] ;?>" />
 
-            <img class="image" src="../../public/images/projects/project1/project1_2.png" alt="image de la deuxieme section du projet 1" />
+<?php
+}
+            
+$pictures->closeCursor();
+?>
+
 
         </div>
 

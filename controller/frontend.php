@@ -7,10 +7,8 @@ require_once('model/UserManager.php');
 function listProjects()
 {
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager(); 
-    //$pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
     
     $projects = $projectManager->getProjects(); 
-    //$firstPicture = $pictureManager ->getFirstPicture($projectId);
 
     require('view/frontend/listProjectsView.php');
 }
@@ -18,10 +16,10 @@ function listProjects()
 function project($projectId)
 {
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
-    //$pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
+    $pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
 
     $project = $projectManager->getProject($projectId);
-    //$pictures = $pictureManager->getPictures($projectId);
+    $pictures = $pictureManager->getPictures($projectId);
 
     require('view/frontend/projectView.php');
 }

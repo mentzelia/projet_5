@@ -5,15 +5,15 @@ ob_start();
             
 <section class="text-section">
 
-    <article>
+    <header>
 
         <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
         <p>Retrouvez sur ce site toutes mes créations web.</p>
 
-    </article>
+    </header>
 
-</section>
+
 
 
 <?php
@@ -22,13 +22,13 @@ while ($data = $projects->fetch())
 ?>
 
 
-<section class="image-section">
+<article class="image-section">
 
     <div class="overlay-color"></div>
 
     <figure>
 
-        <img class="image" src="public/images/home-images/image1.png" alt="image du projet d'une agence web" />
+        <img class="image" src="<?= $data['src']; ?>" alt="image du projet d'une agence web" />
 
         <figcaption>
             
@@ -42,6 +42,8 @@ while ($data = $projects->fetch())
 
     </figure>
 
+</article>
+    
 </section>
 
 <?php
