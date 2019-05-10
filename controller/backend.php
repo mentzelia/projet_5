@@ -68,3 +68,12 @@ function sendModifiedProject($project_title, $short_description, $complete_descr
     header('Location:index.php?action=showDashboard'); 
     
 }
+
+function deleteProject($projectId)
+{
+    $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
+    $project = $projectManager->deleteSelectedProject($projectId);
+    
+    header('Location:index.php?action=showDashboard'); 
+
+}

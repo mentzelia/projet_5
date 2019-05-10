@@ -47,4 +47,15 @@ class ProjectManager extends Manager
         
     }
     
+    public function deleteSelectedProject($projectId)
+    {
+        $db = $this->dbConnect();
+        $projects = $db->prepare('DELETE FROM projects WHERE id = ?');
+        $deletedProject = $projects->execute(array($projectId));
+
+        return $deletedProject;
+        
+        $req->closeCursor();
+    }
+    
 }

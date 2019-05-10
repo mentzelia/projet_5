@@ -173,6 +173,23 @@ try {
             } 
         }
         
+        elseif($_GET['action'] == 'deleteProject'){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        
+                        deleteProject($_GET['id']);
+                    }
+                    else {
+                        throw new Exception('Aucun identifiant de billet envoyé');
+                    }
+                }
+            }
+            else{
+                getLogInForm();
+            } 
+        }
+        
         
         
         
