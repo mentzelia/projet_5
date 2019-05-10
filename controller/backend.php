@@ -34,3 +34,20 @@ function sendProject($project_title, $short_description, $complete_description, 
     
     header('Location:index.php?action=showDashboard'); 
 }
+
+function getProjectToModify(){
+    
+    $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager(); 
+    $projects = $projectManager->getProjects(); 
+    
+    require('view/backend/listProjectsView.php'); 
+}
+
+function modifyProject($projectId)
+{
+    $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
+
+    $project = $projectManager->getProject($projectId);
+
+    require('view/backend/modifyProjectView.php');
+}

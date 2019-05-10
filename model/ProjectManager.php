@@ -8,7 +8,7 @@ class ProjectManager extends Manager
     public function getProjects()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT * FROM pictures AS p INNER JOIN projects AS pr ON p.project_id=pr.id WHERE first_picture=1 ORDER BY project_id');
+        $req = $db->query('SELECT *, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM pictures AS p INNER JOIN projects AS pr ON p.project_id=pr.id WHERE first_picture=1 ORDER BY project_id');
 
         return $req;
     }

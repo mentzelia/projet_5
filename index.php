@@ -119,6 +119,37 @@ try {
             }
         }
         
+        elseif($_GET['action'] == 'getProjectToModify'){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    
+                    getProjectToModify();
+                }
+            }else{
+                    getLogInForm();
+            }
+        }
+        
+        elseif($_GET['action'] == 'modifyProject'){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        $postId = $_GET['id'];
+                        modifyProject($_GET['id']);
+                    }
+                    else {
+                        throw new Exception('Aucun identifiant de projet envoyé');
+                    }
+                }
+            }
+            else{
+                getLogInForm();
+            }           
+        }
+        
         
         
         
