@@ -51,3 +51,20 @@ function modifyProject($projectId)
 
     require('view/backend/modifyProjectView.php');
 }
+
+function sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId)
+{
+    
+    $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
+    
+    $project_title = htmlspecialchars($project_title);
+    $short_description = htmlspecialchars($short_description);
+    $website_link = htmlspecialchars($website_link);
+    $skills = htmlspecialchars($skills);
+
+    
+    $sendModifiedProject = $projectManager->sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId);
+    
+    header('Location:index.php?action=showDashboard'); 
+    
+}

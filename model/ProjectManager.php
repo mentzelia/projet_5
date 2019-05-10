@@ -35,4 +35,16 @@ class ProjectManager extends Manager
         
     }
     
+    public function sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId)
+    {
+        $db = $this->dbConnect();
+        $projects = $db->prepare('UPDATE projects SET project_title = ?, short_description = ?, complete_description = ?, website_link = ?, skills = ? WHERE id = ?');
+        $dataProject = $projects->execute(array($project_title, $short_description, $complete_description, $website_link, $skills, $projectId));
+
+        return $dataProject;
+        
+        $req->closeCursor();  
+        
+    }
+    
 }
