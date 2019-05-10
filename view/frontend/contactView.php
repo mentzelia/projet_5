@@ -2,9 +2,7 @@
 
 ob_start(); 
 ?>
-<section class="text-section">
-
-    <article>
+<aside class="text-section">
 
         <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
@@ -16,17 +14,15 @@ ob_start();
         <p class="button"><a href="index.php?action=quotation">Simuler un devis en ligne</a></p>
 
 
-    </article>
+</aside>
 
-</section>
-
-<section class="map">
+<div class="map">
 
     <p>MAP GOOGLE </p>
 
-</section>
+</div>
 
-<section class="contact-form">
+<div class="contact-form">
 
         <form method="post" action="" name="cform" id="cform">
 
@@ -44,7 +40,7 @@ ob_start();
 
         </form>
 
-</section>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 

@@ -4,7 +4,7 @@ ob_start();
 ?>
 
            
-<section class="register_form">
+<section class="register-form">
 
     <h2>Inscription</h2>
         

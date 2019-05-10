@@ -4,6 +4,8 @@ ob_start();
 ?>
    
 <section class="devis">
+    
+    <h2>Simuler votre devis en ligne</h2>
                 
                 
                 

@@ -19,7 +19,6 @@ ob_start();
             
             <li><a href="index.php?action=getProjectToModify">Modifier ou supprimer un projet</a></li>
             
-            <li><a href="#">Voir les devis</a></li>
         </ul>
     </div>
 

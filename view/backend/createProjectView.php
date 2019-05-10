@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Portfolio Virginie Duboscq - Nouveau billet</title>
+    <title>Portfolio Virginie Duboscq - Nouveau projet</title>
         <link rel="icon" href="public/images/favicon.ico" type="image/x-icon">
         <link href="public/css/normalize.css" rel="stylesheet" type="text/css">
         <link href="public/css/style.css" rel="stylesheet" type="text/css">

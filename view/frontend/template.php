@@ -28,12 +28,14 @@
                 
             <h1>
 
-                <a href="index.php"><img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
+                <a href="index.php">
+                    <img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/>
+                </a>
 
             </h1>
 
             <nav class="header-nav">
-
+    
                 <ul>
 
                     <li>
@@ -55,7 +57,11 @@
                 </ul>
 
             </nav>
-         
+            
+            <p class="back">
+                <a href="index.php">Retour</a>
+            </p>
+
         </header>
         
         <main>

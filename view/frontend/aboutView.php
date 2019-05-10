@@ -5,19 +5,17 @@ ob_start();
 
 <section class="text-section">
                 
-    <article>
 
-        <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
+    <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
-        <p>Je vous décris mon parcours en quelques lignes.</p>
+    <p>Je vous décris mon parcours en quelques lignes.</p>
 
-    </article>
 
     <figure class="portrait">
 
         <div class="portrait-overlay"></div>
 
-        <img src="../../public/images/apropos/photo.jpg" alt="portrait de Virginie Duboscq" />
+        <img src="public/images/apropos/photo.jpg" alt="portrait de Virginie Duboscq" />
 
     </figure>
 

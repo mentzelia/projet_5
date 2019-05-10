@@ -1,25 +1,16 @@
 <?php $title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
 
 <?php ob_start(); ?>
-
-<p><a href="index.php">Retour</a></p>
-
             
-<section class="text-section">
-
-    <article>
+<aside class="text-section">
 
         <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
         <p class="online-link"><i class="fas fa-chalkboard-teacher"><a href="<?= $project['website_link'] ?>" target="_blank">Voir le projet en ligne</a></i></p>
 
-    </article>
-
-</section>
+</aside>
 
 <section class="project-section">
-
-    <article>
 
         <h2>Projet <?= $project['id'] ?>: <?= $project['project_title'] ?></h2>
 
@@ -48,7 +39,6 @@ $pictures->closeCursor();
         
         <p class="skills"><span>Compétences nécessaires pour ce projet: </span><?= $project['skills'] ?>.</p>
 
-    </article>
 
 </section>
 

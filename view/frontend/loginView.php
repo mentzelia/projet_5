@@ -4,7 +4,9 @@ ob_start();
 ?>
 
            
-<section class="login_form">
+<section class="login-form">
+    
+    <h2>Connexion</h2>
 
     <form method="post" action="index.php?action=admin_connexion">
     <label for="login">Nom d'utilisateur:</label>

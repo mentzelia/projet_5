@@ -3,17 +3,13 @@
 ob_start(); 
 ?>
             
-<section class="text-section">
+<aside class="text-section">
 
-    <header>
+    <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
-        <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
+    <p>Retrouvez sur ce site toutes mes créations web.</p>
 
-        <p>Retrouvez sur ce site toutes mes créations web.</p>
-
-    </header>
-
-
+</aside>
 
 
 <?php
@@ -44,7 +40,7 @@ while ($data = $projects->fetch())
 
 </article>
     
-</section>
+
 
 <?php
 }

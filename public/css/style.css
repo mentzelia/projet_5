@@ -1,3 +1,4 @@
+/*device mobile -> 480px */
 body {
     
     font-family: 'Open Sans', sans-serif;
@@ -6,21 +7,17 @@ body {
     
 }
 
-header, .header-nav ul, main, .text-section, article, .image-section, .about-section, figcaption, .contact-form, #cform, footer, .social-icons, .project-section, .thumbnails {
+header, h1, a, .logo, .header-nav ul, main, .text-section, .image-section, .about-section, figcaption, .portrait, .contact-form, #cform, footer, .footer-nav ul, .social-icons, .project-section, .thumbnails {
     
     display: flex;
     
 }
 
-.more-link {
+main, .portrait {
     
-    display: none;
-    
-}
-
-.image-section:hover .more-link {
-    
-    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -29,7 +26,7 @@ header, .header-nav ul, main, .text-section, article, .image-section, .about-sec
     position: absolute;
 }
 
-header, .social-icons {
+.social-icons {
     
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -38,8 +35,27 @@ header, .social-icons {
 
 .logo, .header-nav {
     
-    margin: 3%;
-    width: 30%;
+    margin: 1%;
+    
+}
+
+.logo {
+    
+    width: 60%;
+}
+
+.back {
+    
+    width: 90%;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    
+}
+
+.back a {
+    
+    color: rgb(251, 83, 83);
     
 }
 
@@ -50,10 +66,7 @@ header, .social-icons {
     
 }
 
-.header-nav ul {
-    
-    justify-content: space-around;
-}
+
 
 li {
     
@@ -68,24 +81,17 @@ a {
     
 }
 
-main, .header-nav ul {
-    
-    flex-flow: row wrap;
-    
-}
 
-.text-section, article, .image-section, .about-section, .contact-form , .project-section, .thumbnails {
+
+header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul {
     
     flex-flow: column nowrap;
     justify-content: center;
+    align-items: center;
     
 }
 
-article {
-    
-    align-items: center;
-   
-}
+
 
 #name {
     
@@ -102,15 +108,17 @@ h2 {
     font-family: 'Open Sans', sans-serif;
     font-size: 26px;
     text-align: center;
+    margin-bottom: 0%;
     
 }
 
 .text-section, .image-section, .about-section, .map {
     
     align-items: center;    
-    width: 500px;
-    height: 400px;
-    margin: 5%;
+    width: 90%;
+    height: auto;
+    margin: 1%;
+    margin-bottom: 3%;
     padding: 2%;
     
 }
@@ -131,7 +139,7 @@ figure {
 
 .image {
     
-    width: 500px;    
+    width: 100%;    
     
 }
 
@@ -143,36 +151,17 @@ figure {
     bottom: 0;
     background-color: rgba(255, 255, 255, 0);
     opacity: 0;
-    
-    
+      
 }
 
-.image-section:hover .overlay-color {
+figcaption, footer, .copy-right {
     
-    background-color: rgba(251, 83, 83, 0.8);
-    opacity: 0.8;
-    transition-property: opacity;
-    transition-duration: 1s;
-    
-    
-}
-
-figcaption, footer {
-    
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     margin-bottom: 3%;
     
 }
 
-h2 {
-    margin-bottom: 0%;
-
-}
-
-.image-section:hover .more-link {
+.more-link {
     
     margin: 1%;
     padding: 2%;
@@ -189,27 +178,9 @@ h2 {
 
 .portrait img {
     
-    width: 250px;
-    height: 250px;
+    width: 40%;
+    height: auto;
     box-shadow: 10px 10px 10px rgba(251, 83, 83, 0.8);
-}
-
-.portrait-overlay {
-    
-    display: block;
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: 2s;
-    
-}
-
-.portrait:hover .portrait-overlay {
-    
-    width: 250px;
-    height: 250px;
-    background-color: rgba(251, 83, 83, 0.6);
-    opacity: 0.8;
-    
 }
 
 .about-section, .contact-form {
@@ -293,15 +264,14 @@ h2 {
 
 .contact-form {
     
-    width: 100%;
-    height: 500px;
+    width: 90%;
+    height: auto;
     align-items: center;
 }
 
 #cform {
     
-    width: 650px;
-    margin: 5%;
+    width: 100%;
     padding: 5%;
     flex-flow: column wrap;
     align-items: stretch;
@@ -342,10 +312,10 @@ h2 {
 
 .project-section {
     
-    width: 35%;
+    width: 95%;
     height: auto;
     align-items: center;    
-    margin: 5%;
+    margin: 2%;
     padding: 2%;
     
 }
@@ -357,13 +327,23 @@ h2 {
     align-self: center;
 }
 
-.project-section article p {
-    
-    text-align: center;
-}
 
 .skills {
     
     font-weight: bolder;
 
+}
+
+.register-form, .register-form form, .login-form, .login-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form h2, .login-form h2 {
+    margin-bottom: 3%;
+    color: rgb(251, 83, 83); 
+    font-weight: bold;
 }
