@@ -86,17 +86,42 @@ try {
             }
         }
             
-        
-        
-        
-        
-        
-        
-        
-    
         elseif($_GET['action'] == 'log_out'){
             logOutSession();
         }
+        
+        elseif($_GET['action'] == 'createNewProject'){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    getCreateProjectPage();
+                }
+            }else{
+                    getLogInForm();
+            }
+        }
+        
+        elseif($_GET['action'] == 'sendProject'){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    
+                    if(isset($_POST['project_title']) AND isset($_POST['short_description']) AND isset($_POST['complete_description']) AND isset($_POST['website_link']) AND isset($_POST['skills'])){
+                
+                        if(!empty($_POST['project_title']) AND !empty($_POST['short_description']) AND !empty($_POST['complete_description']) AND !empty($_POST['website_link']) AND !empty($_POST['skills'])){
+                    
+                            sendProject($_POST['project_title'], $_POST['short_description'], $_POST['complete_description'], $_POST['website_link'], $_POST['skills']);
+                        }
+                    } 
+                }
+            }else{
+                    getLogInForm();
+            }
+        }
+        
+        
+        
+        
     
     
     }

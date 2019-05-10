@@ -15,7 +15,7 @@ ob_start();
         
         <ul>
             
-            <li><a href="index.php?action=newProject">Ajouter un projet</a></li>
+            <li><a href="index.php?action=createNewProject">Ajouter un projet</a></li>
             
             <li><a href="index.php?action=getProjectToModify">Modifier ou supprimer un projet</a></li>
             
