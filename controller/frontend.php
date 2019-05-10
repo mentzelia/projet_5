@@ -57,7 +57,31 @@ function addUser($login, $password1, $password2, $email)
                
 }
 
-function GetLogInForm()
+function getLogInForm()
 {
     require('view/frontend/loginView.php');
+}
+
+function verifyUserData($login, $password)
+{
+    $userManager = new OpenClassRooms\Duboscq\Virginie\UserManager();
+    
+    $data = $userManager->getUserData($login);
+    
+    $passwordOK = password_verify($password, $data['password']);
+    
+    if($login == $data['user'] AND $passwordOK){
+        if($data['role'] == 1){
+            session_start();
+            $_SESSION['id']= $data['id'];
+            $_SESSION['user']= $data['user'];
+            
+            header('Location:index.php?action=showDashboard');
+            
+        }else{
+            echo 'Vous n\'êtes pas administrateur.';
+        }
+    }else{
+        echo 'Mauvais identifiant ou mot de passe<br /><a href="index.php?action=log_in">Retour</a>'; 
+    } 
 }

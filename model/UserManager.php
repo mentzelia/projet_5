@@ -36,7 +36,17 @@ class UserManager extends Manager
         $req->closeCursor(); 
 }
     
-   
+    public function getUserData($login)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, user, password, role FROM member_area WHERE user=?' );
+        $req->execute(array($login));
+        $data = $req->fetch();
+        
+        return $data;
+        
+        $req->closeCursor();
+    }
     
     
 

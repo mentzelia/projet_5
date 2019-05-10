@@ -75,6 +75,16 @@ try {
                 }
             }
         }
+        
+        elseif($_GET['action'] == 'showDashboard'){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){ 
+                    
+                    adminDashboard();
+                } 
+            }
+        }
             
         
         

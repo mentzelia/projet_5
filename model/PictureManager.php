@@ -5,11 +5,11 @@ require_once("model/Manager.php");
 
 class PictureManager extends Manager
 {
-    public function getFirstPicture($projectId)
+    public function getFirstPicture()
     {
         $db = $this->dbConnect();
         $firstPicture = $db->prepare('SELECT * FROM pictures AS p INNER JOIN projects AS pr ON p.project_id=pr.id WHERE first_picture=1 AND project_id=? ORDER BY project_id');
-        $firstPicture->execute(array($projectId));
+        $firstPicture->execute(array());
         
         return $firstPicture;
     }
