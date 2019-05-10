@@ -94,7 +94,9 @@ try {
         
         
     
-    
+        elseif($_GET['action'] == 'log_out'){
+            logOutSession();
+        }
     
     
     }

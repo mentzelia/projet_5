@@ -8,3 +8,11 @@ function adminDashboard()
 {
     require('view/backend/dashboardView.php');
 }
+
+function logOutSession()
+{
+    $_SESSION = array();
+    session_destroy();
+    
+    require('view/backend/logOutView.php');
+}
