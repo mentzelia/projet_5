@@ -3,7 +3,10 @@
 ob_start(); 
 ?>
 
-           
+<p class="back">
+    <a href="index.php">Retour</a>
+</p>
+
 <section class="login-form">
     
     <h2>Connexion</h2>

@@ -3,6 +3,9 @@
 ob_start(); 
 ?>
 
+<p class="back">
+    <a href="index.php">Retour</a>
+</p>
            
 <section class="dashboard">
     
@@ -15,9 +18,9 @@ ob_start();
         
         <ul>
             
-            <li><a href="index.php?action=createNewProject">Ajouter un projet</a></li>
+            <li><a href="index.php?action=createNewProject">Ajouter un projet</a><i class="fas fa-angle-double-right"></i></li>
             
-            <li><a href="index.php?action=getProjectToModify">Modifier ou supprimer un projet</a></li>
+            <li><a href="index.php?action=getProjectToModify">Modifier ou supprimer un projet</a><i class="fas fa-angle-double-right"></i></li>
             
         </ul>
     </div>

@@ -2,7 +2,11 @@
 
 ob_start(); 
 ?>
-   
+
+<p class="back">
+    <a href="index.php">Retour</a>
+</p>
+
 <section class="devis">
     
     <h2>Simuler votre devis en ligne</h2>

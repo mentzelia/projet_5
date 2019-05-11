@@ -3,6 +3,10 @@
 ob_start(); 
 ?>
 
+<p class="back">
+    <a href="index.php">Retour</a>
+</p>
+
 <h1>Gestion des erreurs</h1>
 
 <p>

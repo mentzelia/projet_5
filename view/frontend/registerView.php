@@ -3,7 +3,10 @@
 ob_start(); 
 ?>
 
-           
+<p class="back">
+    <a href="index.php">Retour</a>
+</p>
+
 <section class="register-form">
 
     <h2>Inscription</h2>

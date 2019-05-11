@@ -58,9 +58,6 @@
 
             </nav>
             
-            <p class="back">
-                <a href="index.php">Retour</a>
-            </p>
 
         </header>
         

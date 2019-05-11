@@ -1,7 +1,11 @@
 <?php $title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
 
 <?php ob_start(); ?>
-            
+
+<p class="back">
+    <a href="index.php">Retour</a>
+</p>
+
 <aside class="text-section">
 
         <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
