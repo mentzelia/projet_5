@@ -119,8 +119,12 @@
 
                 <p class="copy-right">&copy; 2019  Virginie Duboscq - Tous droits réservés</p>
 
-             </footer>
+            </footer>
+                
+            <script src="../../public/js/app.js"></script><script src="../../public/js/carte.js"></script>
+            <script src="../../public/js/quotationForm.js"></script>
 
+        
          </body>
 
     </html>

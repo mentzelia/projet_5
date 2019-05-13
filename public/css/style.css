@@ -7,25 +7,25 @@ body {
     
 }
 
-header, h1, a, .logo, .header-nav ul, main, .text-section, .image-section, .about-section, figcaption, .portrait, .contact-form, #cform, footer, .footer-nav ul, .social-icons, .project-section, .thumbnails, .actions, .actions ul li, .new-project, .edit-project, .edit-actions, .edit-icons, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form {
+header, h1, a, .logo, .header-nav ul, main, .text-section, .image-section, .about-section, figcaption, .portrait, .contact-form, #cform, footer, .footer-nav ul, .social-icons, .project-section, .thumbnails, .actions, .actions ul li, .new-project, .edit-project, .edit-actions, .edit-icons, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form, #quotation-form section {
     
     display: flex;
     
 }
 
-main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form {
+main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form section {
     
     flex-direction: column;
     
 }
 
-header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul {
+header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, #quotation-form {
     
     flex-flow: column nowrap;
     
 }
 
-main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul {
+main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, #quotation-form, #quotation-form section {
     
     justify-content: center;
     
@@ -38,7 +38,7 @@ main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, 
     
 }
 
-header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form {
+header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, #quotation-form, #quotation-form section {
     
     align-items: center;
     
@@ -61,13 +61,13 @@ header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .co
     
 }
 
-.back, .return, .text-section, .image-section, .about-section, .map, .contact-form, .thumbnails img {
+.back, .return, .text-section, .image-section, .about-section, #map, .contact-form, .thumbnails img, #quotation-form {
     
     width: 90%;
 
 }
 
-.logo {
+.logo, #quotation-form section {
     
     width: 60%;
 }
@@ -127,7 +127,7 @@ h2 {
     
 }
 
-.text-section, .image-section, .about-section, .map {
+.text-section, .image-section, .about-section, #map {
     
     align-items: center;    
     height: auto;
@@ -263,7 +263,7 @@ figcaption, footer, .copy-right {
     border: solid 2px rgba(255, 255, 255, 0);
 }
 
-.map {
+#map {
     
     border: solid 1px black;
     

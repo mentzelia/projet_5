@@ -21,9 +21,9 @@ ob_start();
 
 </aside>
 
-<div class="map">
+<div id="map">
 
-    <p>MAP GOOGLE </p>
+    
 
 </div>
 

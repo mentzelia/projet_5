@@ -1,1 +1,24 @@
-  
+/* Media Queries responsive */
+/* Pour tablette 481-800px */
+@media screen and (min-width: 481px) {
+    
+    
+}
+
+
+/* Pour écran PC de 801-950px */
+@media screen and (min-width: 801px) {
+
+}
+
+/* Pour écran PC de 951-1024px */
+@media screen and (min-width: 951px) {
+    
+
+}
+
+/* Pour écran PC de + de 1025 */
+@media screen and (min-width: 1025px) { 
+    
+}
+    
