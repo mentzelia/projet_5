@@ -6,6 +6,7 @@ require_once('model/UserManager.php');
 
 function listProjects()
 {
+    $currentPage = 'listProjects';
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager(); 
     
     $projects = $projectManager->getProjects(); 
@@ -26,21 +27,25 @@ function project($projectId)
 
 function about()
 {
+    $currentPage = 'about';
     require('view/frontend/aboutView.php');
 }
 
 function contact()
 {
+    $currentPage = 'contact';
     require('view/frontend/contactView.php');
 }
 
 function quotation()
 {
+    $currentPage = 'quotation';
     require('view/frontend/quotationView.php');
 }
 
 function GetRegisterForm()
 {
+    $currentPage = 'register';
     require('view/frontend/registerView.php');
 }
 
@@ -59,6 +64,7 @@ function addUser($login, $password1, $password2, $email)
 
 function getLogInForm()
 {
+    $currentPage = 'log_in';
     require('view/frontend/loginView.php');
 }
 

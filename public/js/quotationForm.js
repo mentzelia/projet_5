@@ -1,12 +1,5 @@
 var form = $("#quotation-form");
-form.validate({
-    errorPlacement: function errorPlacement(error, element) { element.before(error); },
-    rules: {
-        confirm: {
-            equalTo: "#password"
-        }
-    }
-});
+
 form.children("section").steps({
     headerTag: "h3",
     bodyTag: "div",

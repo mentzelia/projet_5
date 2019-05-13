@@ -38,19 +38,24 @@
     
                 <ul>
 
-                    <li>
+                    <li <?php if($currentPage == 'listProjects') {
+                     echo 'class= "nav-active" '; }; ?> >
                         <a href="index.php">Portfolio</a>
                     </li>
 
-                    <li>
+                    <li <?php if($currentPage == 'about') {
+                     echo 'class= "nav-active" '; }; ?>
+                    >
                         <a href="index.php?action=about">A Propos</a>
                     </li>
                     
-                    <li>
+                    <li <?php if($currentPage == 'quotation') {
+                     echo 'class= "nav-active" '; }; ?> >
                         <a href="index.php?action=quotation">Devis en ligne</a>
                     </li>
 
-                    <li>
+                    <li <?php if($currentPage == 'contact') {
+                     echo 'class= "nav-active" '; }; ?> >
                         <a href="index.php?action=contact">Contact</a>
                     </li>
 
@@ -79,27 +84,33 @@
 
                      <ul>
 
-                        <li>
+                        <li <?php if($currentPage == 'listProjects') {
+                     echo 'class= "nav-active" '; }; ?> >
                             <a href="index.php">Portfolio</a>
                         </li>
 
-                        <li>
+                        <li <?php if($currentPage == 'about') {
+                     echo 'class= "nav-active" '; }; ?> >
                             <a href="index.php?action=about">A Propos</a>
                         </li>
 
-                        <li>
+                        <li <?php if($currentPage == 'quotation') {
+                     echo 'class= "nav-active" '; }; ?> >
                             <a href="index.php?action=quotation">Devis en ligne</a>
                         </li>
 
-                        <li>
+                        <li <?php if($currentPage == 'contact') {
+                     echo 'class= "nav-active" '; }; ?> >
                             <a href="index.php?action=contact">Contact</a>
                         </li>
 
-                        <li>
+                        <li <?php if($currentPage == 'register') {
+                     echo 'class= "nav-active" '; }; ?> >
                             <a href="index.php?action=register">Créer un compte</a>
                         </li>
                          
-                        <li>
+                        <li <?php if($currentPage == 'log_in') {
+                     echo 'class= "nav-active" '; }; ?> >
                             <a href="index.php?action=log_in">Se connecter</a>
                         </li>
 
@@ -121,8 +132,11 @@
 
             </footer>
                 
-            <script src="../../public/js/app.js"></script><script src="../../public/js/carte.js"></script>
-            <script src="../../public/js/quotationForm.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="public/js/jquery.steps.min.js"></script>
+            <script src="public/js/app.js"></script><script src="public/js/carte.js"></script>
+            <script src="public/js/quotationForm.js"></script>
+            
 
         
          </body>
