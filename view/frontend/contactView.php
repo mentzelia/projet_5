@@ -21,11 +21,7 @@ ob_start();
 
 </aside>
 
-<div id="map">
-
-    
-
-</div>
+<div id="map"></div>
 
 <div class="contact-form">
 

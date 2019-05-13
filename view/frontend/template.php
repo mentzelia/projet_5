@@ -134,7 +134,9 @@
                 
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="public/js/jquery.steps.min.js"></script>
-            <script src="public/js/app.js"></script><script src="public/js/carte.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFRwCfc8vtIrB9ap10pEiysg83zGg7Mic&callback=initMap"
+            async defer></script>
+            <script src="public/js/carte.js"></script>
             <script src="public/js/quotationForm.js"></script>
             
 
