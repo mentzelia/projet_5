@@ -1,4 +1,7 @@
-<?php $title = 'Portfolio Virginie Duboscq - Connexion';
+<?php 
+
+$meta = 'Page de connexion';
+$title = 'Portfolio Virginie Duboscq - Connexion';
 
 ob_start(); 
 ?>
