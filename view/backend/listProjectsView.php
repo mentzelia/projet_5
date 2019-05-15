@@ -1,4 +1,4 @@
-<?php $title = 'Portfolio Virginie Duboscq  - Liste des billets'; ?>
+<?php $title = 'Portfolio Virginie Duboscq  - Liste des projets'; ?>
 
 <?php ob_start(); ?>
 

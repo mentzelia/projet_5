@@ -1,4 +1,7 @@
-<?php $title = 'Portfolio Virginie Duboscq - A propos';
+<?php 
+
+$meta = 'Page de biographie de Virginie Duboscq, développeuse et intégratrice web.';
+$title = 'Portfolio Virginie Duboscq - A propos';
 
 ob_start(); 
 ?>
@@ -7,39 +10,41 @@ ob_start();
     <a href="index.php">Retour</a>
 </p>
 
-<section class="text-section">
-                
-
-    <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
-
-    <p>Je vous décris mon parcours en quelques lignes.</p>
+<div class="allSections">
+    
+    <section class="text-section">
 
 
-    <figure class="portrait">
+        <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
-        <div class="portrait-overlay"></div>
+        <p>Je vous décris mon parcours en quelques lignes.</p>
 
-        <img src="public/images/apropos/photo.jpg" alt="portrait de Virginie Duboscq" />
 
-    </figure>
+        <figure class="portrait">
 
-</section>
+            <img src="public/images/apropos/photo.jpg" alt="portrait de Virginie Duboscq" />
 
-<section class="about-section" >
+        </figure>
 
-    <div class="author-description">
+    </section>
 
-        <p><span class="tabulation"></span>Après 7 ans en tant que docteur en pharmacie, je suis <span style="font-weight: bold">épuisée</span> du milieu médical.</p>
+    <section class="about-section" >
 
-        <p><span class="tabulation"></span>Je tente une première reconversion professionnelle dans <span style="font-weight: bold">l'accompagnement émotionnel</span> des femmes qui subissent un burnout. Mais à nouveau, le <span style="font-weight: bold">poids</span> de l'accompagnement psychologique des patients me pèse.</p>
+        <div class="author-description">
 
-        <h2 class="quote">"Mon but est de mettre ma créativité et mes compétences à votre service"</h2>
+            <p><span class="tabulation"></span>Après 7 ans en tant que docteur en pharmacie, je suis <span style="font-weight: bold">épuisée</span> du milieu médical.</p>
 
-        <p><span class="tabulation"></span>J'ai l'occasion d'entreprendre <span style="font-weight: bold">un voyage</span> de 7 mois en Polynésie française, où j'en profite pour me reformer à distance dans <span style="font-weight: bold">le web</span>. Mon but est de mettre ma <span style="font-weight: bold">créativité</span> et <span style="font-weight: bold">mes compétences</span> à votre service tout en alliant ma passion des voyages.</p>
+            <p><span class="tabulation"></span>Je tente une première reconversion professionnelle dans <span style="font-weight: bold">l'accompagnement émotionnel</span> des femmes qui subissent un burnout. Mais à nouveau, le <span style="font-weight: bold">poids</span> de l'accompagnement psychologique des patients me pèse.</p>
 
-    </div>
+            <h2 class="quote">"Mon but est de mettre ma créativité et mes compétences à votre service"</h2>
 
-</section>
+            <p><span class="tabulation"></span>J'ai l'occasion d'entreprendre <span style="font-weight: bold">un voyage</span> de 7 mois en Polynésie française, où j'en profite pour me reformer à distance dans <span style="font-weight: bold">le web</span>. Mon but est de mettre ma <span style="font-weight: bold">créativité</span> et <span style="font-weight: bold">mes compétences</span> à votre service tout en alliant ma passion des voyages.</p>
+
+        </div>
+
+    </section>
+    
+</div>
 
 <?php $content = ob_get_clean(); ?>
 

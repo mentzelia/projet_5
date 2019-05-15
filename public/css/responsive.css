@@ -1,24 +1,175 @@
 /* Media Queries responsive */
-/* Pour tablette 481-800px */
-@media screen and (min-width: 481px) {
-    
-    
-}
-
-
-/* Pour écran PC de 801-950px */
+/* Pour écran de 801-950px */
 @media screen and (min-width: 801px) {
+    
+    footer h1, header h1 {
+        
+        width: 50%;
+    }
+    
+    .logoHeader {
+        
+        width: 65%;
+        
+    }
+    
 
 }
 
-/* Pour écran PC de 951-1024px */
+
+
+/* Pour écran de 951-1024px */
 @media screen and (min-width: 951px) {
     
+    header, .header nav, .header-nav ul {
+    
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    }
 
+    .header-nav {
+    
+    width:50%;
+        
+    }
+    
+    .portrait {
+        
+        width: 65%;
+        margin-top: 5%;
+    }
+    
+    .text-section, .image-section, .about-section {
+       
+    width: 70%;
+    height: 33%;
+    margin: 5%;
+    padding: 2%;
+    
+    }
+    
+    
+   
 }
+
+
 
 /* Pour écran PC de + de 1025 */
 @media screen and (min-width: 1025px) { 
+    
+    .logoHeader {
+        border: solid 2px red;
+        width: 50%;
+    }
+    
+    main, .allSections, .thumbnails {
+        
+        flex-flow: row wrap;
+        align-items: center;
+        
+    }
+    
+    main, .header-nav, .thumbnails {
+        
+        justify-content: space-around;
+    }
+    
+    .header-nav {
+        width: 40%;
+        padding-right: 10%;
+    }
+    
+    .text-section, .image-section, .about-section, #map  {
+    
+    align-items: center;    
+    width: 33%;
+    margin: 5%;
+    padding: 2%;
+    
+    }
+    
+    .text-section, .image-section, .about-section {
+        
+        height: 33%;
+        
+    }
+    
+    .contact-form {
+        
+        width: 50%;
+    }
+    
+    .thumbnails img {
+        
+        width: 40%;
+        
+    }
+    
+    #map {
+        
+        height: 400px;
+        
+    }
+    
+    .contactSections {
+        display: flex;
+        width: 100%;
+        padding-top: 5%;
+    }
+    
+    .more-link {
+    
+    display: none;
+    
+    }
+    .image-section:hover .more-link {
+
+        display: block;
+
+    }
+    .image-section:hover .overlay-color {
+
+        background-color: rgba(251, 83, 83, 0.8);
+        opacity: 0.8;
+        transition-property: opacity;
+        transition-duration: 1s;
+
+
+    }
+    .image-section:hover .more-link {
+
+        margin: 1%;
+        padding: 2%;
+        border: solid 1px white;
+
+    }
+
+    .portrait {
+        
+        width: 100%;
+        
+    }
+
+    article {
+
+        align-items: center;
+        margin: 1%;
+
+    }
+
+    .project-section article p {
+
+        text-align: center;
+
+    }
+    
+    
+    
+    
+
+    
     
 }
     

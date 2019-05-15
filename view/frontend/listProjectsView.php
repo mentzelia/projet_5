@@ -1,8 +1,10 @@
-<?php $title = 'Portfolio Virginie Duboscq - Bienvenue';
+<?php 
+$meta = 'Portfolio de Virginie Duboscq. retrouvez ici toutes mes créations.';
+$title = 'Portfolio Virginie Duboscq - Bienvenue';
 
 ob_start(); 
 ?>
-            
+    
 <aside class="text-section">
 
     <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
@@ -27,7 +29,7 @@ while ($data = $projects->fetch())
         <img class="image" src="<?= $data['src']; ?>" alt="image du projet d'une agence web" />
 
         <figcaption>
-            
+
             <h2><span>Projet <?= $data['id'] ?>: </span><?= $data['project_title'] ?></h2>
 
             <p class="description"><?= $data['short_description'] ?></p>
@@ -38,8 +40,7 @@ while ($data = $projects->fetch())
 
     </figure>
 
-</article>
-    
+</article>   
 
 
 <?php

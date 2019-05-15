@@ -5,7 +5,6 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta charset="utf-8">
-        <meta name="description" content="Page de modification de projet en ligne">
         <meta name="author" content="Virginie DUBOSCQ">
         
         <title>Portfolio Virginie Duboscq - Modifier un projet</title>

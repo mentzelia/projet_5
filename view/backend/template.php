@@ -29,7 +29,7 @@
                 
             <h1>
 
-                <a href="index.php"><img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
+                <a href="index.php"><img class="logoHeader" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
 
             </h1>
 
@@ -69,7 +69,7 @@
 
                  <h1>
 
-                     <a href="index.php"><img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
+                     <a href="index.php"><img class="logoFooter" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
 
                  </h1>
 

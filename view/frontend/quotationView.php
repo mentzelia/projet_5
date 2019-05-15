@@ -1,4 +1,7 @@
-<?php $title = 'Portfolio Virginie Duboscq - Devis';
+<?php 
+
+$meta = 'Simulez votre devis directement en ligne.';
+$title = 'Portfolio Virginie Duboscq - Devis';
 
 ob_start(); 
 ?>

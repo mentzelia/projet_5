@@ -21,6 +21,8 @@ function project($projectId)
 
     $project = $projectManager->getProject($projectId);
     $pictures = $pictureManager->getPictures($projectId);
+    
+    $currentPage = 'project';
 
     require('view/frontend/projectView.php');
 }

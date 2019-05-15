@@ -1,4 +1,7 @@
-<?php $title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
+<?php 
+
+$meta = 'Page des projets réalisés.';
+$title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
 
 <?php ob_start(); ?>
 

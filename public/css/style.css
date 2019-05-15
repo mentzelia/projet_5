@@ -7,13 +7,13 @@ body {
     
 }
 
-header, h1, a, .logo, .header-nav ul, main, .text-section, .image-section, .about-section, figcaption, .portrait, .contact-form, #cform, footer, .footer-nav ul, .social-icons, .project-section, .thumbnails, .actions, .actions ul li, .new-project, .edit-project, .edit-actions, .edit-icons, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form, #quotation-form section {
+header, h1, a, .logoHeader, .logoFooter, .header-nav ul, main, .text-section, .image-section, .about-section, figcaption, .portrait, .contact-form, #cform, footer, .footer-nav ul, .social-icons, .project-section, .thumbnails, .actions, .actions ul li, .new-project, .edit-project, .edit-actions, .edit-icons, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form, #quotation-form section, .allSections {
     
     display: flex;
     
 }
 
-main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form section {
+main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form section, .allSections {
     
     flex-direction: column;
     
@@ -25,7 +25,7 @@ header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .co
     
 }
 
-main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, #quotation-form, #quotation-form section {
+main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, #quotation-form, #quotation-form section, .allSections {
     
     justify-content: center;
     
@@ -38,7 +38,7 @@ main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, 
     
 }
 
-header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, #quotation-form, #quotation-form section {
+header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, #quotation-form, #quotation-form section, .contact-form, #map, .allSections {
     
     align-items: center;
     
@@ -50,7 +50,7 @@ header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .co
     
 }
 
-.overlay-color, .portrait:hover .portrait-overlay {
+.overlay-color {
     
     position: absolute;
 }
@@ -61,20 +61,46 @@ header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .co
     
 }
 
-.back, .return, .text-section, .image-section, .about-section, #map, .contact-form, .thumbnails img, #quotation-form {
+.back, .return, .text-section, .image-section, .about-section, #map, .contact-form, .thumbnails img, #quotation-form, .project-section {
     
     width: 90%;
 
 }
 
-.logo, #quotation-form section {
+.logoHeader, #quotation-form section {
     
     width: 60%;
 }
 
-.register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, .logo, .header-nav {
+ .logoFooter {
+        
+        width: 30%;
+}
+
+.text-section, .image-section, .about-section, .portrait img, .contact-form, .project-section {
+    
+    height: auto;
+}
+
+#map {
+    
+    height: 400px;
+}
+
+.spacer {
+    
+    height: 30px;
+}
+
+.register-form, .register-form form, .login-form, .login-form form, .logoHeader, .logoFooter, .header-nav {
     
     margin: 1%;
+}
+
+.new-project form, .edit-project form {
+    
+    width: 95%;
+    line-height: 2;
 }
 
 .back, .return {
@@ -127,15 +153,14 @@ h2 {
     
 }
 
-.text-section, .image-section, .about-section, #map {
-    
-    align-items: center;    
-    height: auto;
+.text-section, .image-section, .about-section, #map, .contact-form {
+        
     margin: 1%;
     margin-bottom: 3%;
     padding: 2%;
     
 }
+
 
 .image-section, .project-section {
     
@@ -186,7 +211,6 @@ figcaption, footer, .copy-right {
 .portrait img {
     
     width: 40%;
-    height: auto;
     box-shadow: 10px 10px 10px rgba(251, 83, 83, 0.8);
 }
 
@@ -269,12 +293,6 @@ figcaption, footer, .copy-right {
     
 }
 
-.contact-form {
-    
-    height: auto;
-    align-items: center;
-}
-
 #cform {
     
     padding: 5%;
@@ -295,9 +313,14 @@ figcaption, footer, .copy-right {
     align-self: flex-end;
 }
 
-.social-icons li, .online-link, .edit-actions {
+.social-icons li, .online-link {
    
     margin: 5%;
+}
+
+.edit-actions {
+        
+    margin-top: 1%;
 }
 
 .social-icons li a:hover, .online-link, .online-link a {
@@ -314,10 +337,7 @@ figcaption, footer, .copy-right {
 }
 
 .project-section {
-    
-    width: 95%;
-    height: auto;
-    align-items: center;    
+        
     margin: 2%;
     padding: 2%;
     
@@ -346,9 +366,4 @@ figcaption, footer, .copy-right {
 figcaption, footer, .copy-right, h2, .back, .edit-actions p, .online-link, .online-link a, #cform  {
     
     text-align: center;
-}
-
-.spacer {
-    
-    height: 30px;
 }

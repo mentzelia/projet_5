@@ -1,4 +1,7 @@
-<?php $title = 'Portfolio Virginie Duboscq - Contact';
+<?php 
+
+$meta = 'Page de contact. Vous pouvez me joindre par téléphone ou via le formulaire.';
+$title = 'Portfolio Virginie Duboscq - Contact';
 
 ob_start(); 
 ?>
@@ -7,6 +10,8 @@ ob_start();
     <a href="index.php">Retour</a>
 </p>
 
+<div class="contactSections">
+    
 <aside class="text-section">
 
         <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
@@ -22,6 +27,7 @@ ob_start();
 </aside>
 
 <div id="map"></div>
+</div>
 
 <div class="contact-form">
 

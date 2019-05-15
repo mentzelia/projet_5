@@ -6,7 +6,7 @@
 
     	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta charset="utf-8">
-        <meta name="description" content="Page de biographie de Virginie Duboscq, développeuse et intégratrice web.">
+        <meta name="description" content="<?= $meta ?>">
         <meta name="author" content="Virginie DUBOSCQ">
         
 
@@ -29,7 +29,7 @@
             <h1>
 
                 <a href="index.php">
-                    <img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/>
+                    <img class="logoHeader" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/>
                 </a>
 
             </h1>
@@ -76,7 +76,7 @@
 
                  <h1>
 
-                     <a href="index.php"><img class="logo" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
+                     <a href="index.php"><img class="logoFooter" src="public/images/logo.png" title="logo Virginie Duboscq" alt="logo Virginie Duboscq"/></a>
 
                  </h1>
 
