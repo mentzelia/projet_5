@@ -32,7 +32,7 @@
             
             <h2>Ajouter un nouveau projet</h2>
 
-            <form method="post" action="index.php?action=sendProject">
+            <form class="project-form" method="post" action="index.php?action=sendProject" enctype="multipart/form-data">
                 
                 <label for="project_title">Titre du projet:</label>
                 <input class="new-project-input" type= "text" name="project_title" value="" />
@@ -47,8 +47,24 @@
                 <input class="new-project-input" type= "text" name="short_description" value="" />
 
                 <textarea name="complete_description"></textarea>
+                
+                
+                <!-- envoi des images -->
+                <label for="first-picture">Image principale (JPG, JPEG ou PNG | max. 5 Mo) :</label><br />
+                <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
+                <input type="file" name="first-picture" id="first-picture" /><br />
+                
+                <label for="second-picture">Deuxième image (JPG, JPEG ou PNG | max. 5 Mo) :</label><br />
+                <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
+                <input type="file" name="second-picture" id="second-picture" /><br />
+                
+                <label for="third-picture">Troisième image (JPG, JPEG ou PNG | max. 5 Mo) :</label><br />
+                <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
+                <input type="file" name="third-picture" id="third-picture" /><br />
+                
+                
 
-                <input type="submit" value="Ajouter" />
+                <input class="project-form-button" type="submit" value="Ajouter" />
             </form>
             
         </section> 
