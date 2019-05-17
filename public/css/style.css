@@ -7,38 +7,38 @@ body {
     
 }
 
-header, h1, a, .logoHeader, .logoFooter, .header-nav ul, main, .text-section, .image-section, .about-section, figcaption, .portrait, .contact-form, #cform, footer, .footer-nav ul, .social-icons, .project-section, .thumbnails, .actions, .actions ul li, .new-project, .edit-project, .edit-actions, .edit-icons, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form, #quotation-form section, .allSections {
+header, h1, a, .logoHeader, .logoFooter, .header-nav ul, main, .text-section, .image-section, .about-section, figcaption, .portrait, .contact-form, #cform, footer, .footer-nav ul, .social-icons, .project-section, .thumbnails, .actions-backend, .actions-backend ul li, .new-project, .edit-project, .edit-actions, .edit-icons, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, .allSections {
     
     display: flex;
     
 }
 
-main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, #quotation-form section, .allSections {
+main, .portrait, .actions-backend, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, .allSections {
     
     flex-direction: column;
     
 }
 
-header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, #quotation-form {
+header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul {
     
     flex-flow: column nowrap;
     
 }
 
-main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, #quotation-form, #quotation-form section, .allSections {
+main, .portrait, .actions-backend, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .new-project form, .edit-project form, header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, .allSections {
     
     justify-content: center;
     
 }
  
-.social-icons, .actions ul li, .edit-icons {
+.social-icons, .actions-backend ul li, .edit-icons {
     
     flex-flow: row nowrap;
     justify-content: space-between;
     
 }
 
-header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, main, .portrait, .actions, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, #quotation-form, #quotation-form section, .contact-form, #map, .allSections {
+header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .contact-form , .project-section, .thumbnails, figcaption, footer, .footer-nav ul, main, .portrait, .actions-backend, .new-project, .edit-project, .edit-actions, .return, .register-form, .register-form form, .login-form, .login-form form, .contact-form, #map, .allSections {
     
     align-items: center;
     
@@ -61,13 +61,13 @@ header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .co
     
 }
 
-.back, .return, .text-section, .image-section, .about-section, #map, .contact-form, .thumbnails img, #quotation-form, .project-section {
+.back, .return, .text-section, .image-section, .about-section, #map, .contact-form, .thumbnails img, .project-section {
     
     width: 90%;
 
 }
 
-.logoHeader, #quotation-form section {
+.logoHeader {
     
     width: 60%;
 }
@@ -118,7 +118,7 @@ header, h1 a, .header-nav ul, .text-section, .image-section, .about-section, .co
     background-color: rgb(251, 83, 83);
     border: solid 2px rgb(251, 83, 83);
     border-radius: 35px;
-    color: white;
+    color: rgb(255, 255, 255);
     margin-top: 2%;
     padding: 1% 0%;
     
@@ -218,7 +218,7 @@ figcaption, footer, .copy-right {
     
     margin: 1%;
     padding: 2%;
-    border: solid 1px white;
+    border: solid 1px rgb(255, 255, 255);
      
 }
 
@@ -394,3 +394,88 @@ figcaption, footer, .copy-right, h2, .back, .edit-actions p, .online-link, .onli
     margin: 0% 20%;
     color: rgb(251, 83, 83);
 }
+
+div.steps.clearfix, div.steps.clearfix ul {
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+div.actions.clearfix, div.actions.clearfix ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.actions.clearfix ul li {
+    
+    margin-right: 10%;
+    
+}
+
+div.actions.clearfix ul li a {
+    
+    font-weight: bolder;
+    color: rgb(251, 83, 83);
+    
+}
+
+div.steps.clearfix ul li.first.current, div.steps.clearfix ul li.disabled, div.steps.clearfix ul li.disabled.last, div.steps.clearfix ul li.done, div.steps.clearfix ul li.current {
+    
+    margin-top: 2%;
+    margin-right: 2%;
+    padding: 2%;
+    border: solid 2px rgb(255, 255, 255);
+    border-radius: 10px;
+    
+}
+
+div.steps.clearfix ul li.first.current, div.steps.clearfix ul li.disabled, div.steps.clearfix ul li.disabled.last, div.steps.clearfix ul li.current {
+    
+    background-color: rgb(251, 83, 83); 
+    
+}
+
+li.done {
+    
+    background-color: rgb(206, 206, 206);
+    
+}
+
+div.steps.clearfix ul li.first.current a, div.steps.clearfix ul li.disabled a, div.steps.clearfix ul li.disabled.last a {
+    
+    color: rgb(255, 255, 255);
+}
+
+span.current-info.audible {
+    
+    display: none;
+}
+
+div.content.clearfix {
+    
+    padding: 3%;
+    height: 400px;
+    background-color: rgb(206, 206, 206);
+}
+
+
+#quotation-form {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 2%;
+    width: 90%;
+}
+div.content.clearfix h3 {
+    
+    display: none;
+    
+}
+    

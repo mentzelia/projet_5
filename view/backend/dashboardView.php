@@ -12,7 +12,7 @@ ob_start();
     <h2>Bienvenue sur votre tableau de bord!</h2><br />
 
 
-    <div class="actions">
+    <div class="actions-backend">
         
         <h3>Que voulez-vous faire?</h3>
         
