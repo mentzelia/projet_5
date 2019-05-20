@@ -45,7 +45,8 @@
 
                 <label for="short_description">Description de présentation:</label>
                 <input class="new-project-input" type= "text" name="short_description" value="" />
-
+                
+                <label for="complete_description">Description complète:</label>
                 <textarea name="complete_description"></textarea>
                 
                 
@@ -65,6 +66,7 @@
                 
 
                 <input class="project-form-button" type="submit" value="Ajouter" />
+                
             </form>
             
         </section> 

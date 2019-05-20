@@ -109,8 +109,21 @@ try {
                     if(isset($_POST['project_title']) AND isset($_POST['short_description']) AND isset($_POST['complete_description']) AND isset($_POST['website_link']) AND isset($_POST['skills'])){
                 
                         if(!empty($_POST['project_title']) AND !empty($_POST['short_description']) AND !empty($_POST['complete_description']) AND !empty($_POST['website_link']) AND !empty($_POST['skills'])){
-                    
-                            sendProject($_POST['project_title'], $_POST['short_description'], $_POST['complete_description'], $_POST['website_link'], $_POST['skills']);
+                            
+                            if(isset($_FILES['first-picture']) AND isset($_FILES['second-picture']) AND isset($_FILES['third-picture'])) {
+                                
+                                if($_FILES['first-picture']['error'] == 0 AND $_FILES['second-picture']['error'] == 0 AND $_FILES['third-picture']['error'] == 0) {
+                                    
+                                    if($_FILES['first-picture']['size']<5242880 AND $_FILES['second-picture']['size']<5242880 AND $_FILES['third-picture']['size']<5242880) {
+                            
+                                            
+                                            sendProject($_POST['project_title'], $_POST['short_description'], $_POST['complete_description'], $_POST['website_link'], $_POST['skills'], $_FILES['first-picture'], $_FILES['second-picture'], $_FILES['third-picture']);
+                                            
+                                            
+                                         
+                                    } else { echo "erreur sur taille";}
+                                } else {echo $_FILES['first-picture']['error'];}
+                            } else {echo "pas de champ image";}
                         }
                     } 
                 }
