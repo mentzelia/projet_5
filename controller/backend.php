@@ -23,6 +23,7 @@ function getCreateProjectPage(){
 
 function sendProject($project_title, $short_description, $complete_description, $website_link, $skills, $firstPicture, $secondPicture, $thirdPicture){
     
+    //envoie du projet
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
     
     $project_title = htmlspecialchars($project_title);
@@ -31,7 +32,13 @@ function sendProject($project_title, $short_description, $complete_description, 
     $skills = htmlspecialchars($skills);
     
     $sendProject = $projectManager->sendProject($project_title, $short_description, $complete_description, $website_link, $skills);
-
+    
+    
+    //envoi des images
+    //$pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
+    
+    //$sendFirstPisture = $pictureManager->uploadFirstPicture($projectId,$src);
+    
     $destFirstPicture = 'C:\wamp64\www\projet_5\public\uploads\first-picture\\'.$_FILES['first-picture']['name'];
     move_uploaded_file($_FILES['first-picture']['tmp_name'],$destFirstPicture);
     

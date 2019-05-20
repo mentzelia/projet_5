@@ -115,18 +115,35 @@ try {
                                 if($_FILES['first-picture']['error'] == 0 AND $_FILES['second-picture']['error'] == 0 AND $_FILES['third-picture']['error'] == 0) {
                                     
                                     if($_FILES['first-picture']['size']<5242880 AND $_FILES['second-picture']['size']<5242880 AND $_FILES['third-picture']['size']<5242880) {
+                                        
+                                        $extension = substr(strrchr($_FILES['first-picture']['name'],'.'),1);
+                                        
+                                        if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg') {
+                                            
+                                            $extension = substr(strrchr($_FILES['second-picture']['name'],'.'),1);
+                                        
+                                            if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg') {
+                                                
+                                                $extension = substr(strrchr($_FILES['third-picture']['name'],'.'),1);
+                                        
+                                                if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg') {
                             
-                                            
-                                            sendProject($_POST['project_title'], $_POST['short_description'], $_POST['complete_description'], $_POST['website_link'], $_POST['skills'], $_FILES['first-picture'], $_FILES['second-picture'], $_FILES['third-picture']);
-                                            
-                                            
-                                         
+                                                    sendProject($_POST['project_title'], $_POST['short_description'], $_POST['complete_description'], $_POST['website_link'], $_POST['skills'], $_FILES['first-picture'], $_FILES['second-picture'], $_FILES['third-picture']);
+                                                } else { echo 'probleme extension image 3';} 
+                                                
+                                            } else { echo 'probleme extension image 2';}       
+                                                                                
+                                        } else { echo 'probleme extension image 1';}  
+                                        
                                     } else { echo "erreur sur taille";}
-                                } else {echo $_FILES['first-picture']['error'];}
+                                    
+                                } else {echo 'erreur firstPicture: '.$_FILES['first-picture']['error']. 'puis erreur 2ndPicture: '.$_FILES['second-picture']['error']. 'puis erreur 3rd Pictuer: '.$_FILES['third-picture']['error'];}
+                                
                             } else {echo "pas de champ image";}
                         }
                     } 
                 }
+                
             }else{
                     getLogInForm();
             }
