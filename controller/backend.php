@@ -21,9 +21,23 @@ function getCreateProjectPage(){
     require('view/backend/createProjectView.php');
 }
 
+function sendPictureFolder($file, $pictureFolder){
+    
+    $extension = substr(strrchr($file['name'],'.'),1);
+    
+    $timeStamp = mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
+    
+    $fileName = $timeStamp.'.'.$extension;
+    
+    $destPicture = $_SERVER["DOCUMENT_ROOT"].'/projet_5/public/uploads/'.$pictureFolder.'/'.$fileName;
+    
+    move_uploaded_file($file['tmp_name'],$destPicture);
+    
+}
+
 function sendProject($project_title, $short_description, $complete_description, $website_link, $skills, $firstPicture, $secondPicture, $thirdPicture){
     
-    //envoie du projet
+    //project sending
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
     
     $project_title = htmlspecialchars($project_title);
@@ -33,37 +47,12 @@ function sendProject($project_title, $short_description, $complete_description, 
     
     $sendProject = $projectManager->sendProject($project_title, $short_description, $complete_description, $website_link, $skills);
     
+    //pictures sending
+    $picture1 = sendPictureFolder($firstPicture, 'first-picture');
+    $picture2 = sendPictureFolder($secondPicture, 'second-picture');
+    $picture3 = sendPictureFolder($thirdPicture, 'third-picture');
     
-    //image1
-    $extension = substr(strrchr($_FILES['first-picture']['name'],'.'),1);
-    
-    $timeStamp = mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
-    
-    $fileName = $timeStamp.'.'.$extension;
-    
-    $destFirstPicture = 'C:\wamp64\www\projet_5\public\uploads\first-picture\\'.$fileName;
-    move_uploaded_file($_FILES['first-picture']['tmp_name'],$destFirstPicture);
-    
-    
-    
-    //image2
-    $extension = substr(strrchr($_FILES['second-picture']['name'],'.'),1);
-    $timeStamp = mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
-    $fileName = $timeStamp.'.'.$extension;
-    
-    $destSecondPicture = 'C:\wamp64\www\projet_5\public\uploads\second-picture\\'.$fileName;
-    move_uploaded_file($_FILES['second-picture']['tmp_name'],$destSecondPicture);
-    
-    
-    //image3
-    $extension = substr(strrchr($_FILES['third-picture']['name'],'.'),1);
-    $timeStamp = mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
-    $fileName = $timeStamp.'.'.$extension;
-    
-    $destThirdPicture = 'C:\wamp64\www\projet_5\public\uploads\third-picture\\'.$fileName;
-    move_uploaded_file($_FILES['third-picture']['tmp_name'],$destThirdPicture);
-    
-    
+
     header('Location:index.php?action=showDashboard'); 
 }
 
