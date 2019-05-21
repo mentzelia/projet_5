@@ -34,19 +34,35 @@ function sendProject($project_title, $short_description, $complete_description, 
     $sendProject = $projectManager->sendProject($project_title, $short_description, $complete_description, $website_link, $skills);
     
     
-    //envoi des images
-    //$pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
+    //image1
+    $extension = substr(strrchr($_FILES['first-picture']['name'],'.'),1);
     
-    //$sendFirstPisture = $pictureManager->uploadFirstPicture($projectId,$src);
+    $timeStamp = mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
     
-    $destFirstPicture = 'C:\wamp64\www\projet_5\public\uploads\first-picture\\'.$_FILES['first-picture']['name'];
+    $fileName = $timeStamp.'.'.$extension;
+    
+    $destFirstPicture = 'C:\wamp64\www\projet_5\public\uploads\first-picture\\'.$fileName;
     move_uploaded_file($_FILES['first-picture']['tmp_name'],$destFirstPicture);
     
-    $destSecondPicture = 'C:\wamp64\www\projet_5\public\uploads\second-picture\\'.$_FILES['second-picture']['name'];
+    
+    
+    //image2
+    $extension = substr(strrchr($_FILES['second-picture']['name'],'.'),1);
+    $timeStamp = mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
+    $fileName = $timeStamp.'.'.$extension;
+    
+    $destSecondPicture = 'C:\wamp64\www\projet_5\public\uploads\second-picture\\'.$fileName;
     move_uploaded_file($_FILES['second-picture']['tmp_name'],$destSecondPicture);
     
-    $destThirdPicture = 'C:\wamp64\www\projet_5\public\uploads\third-picture\\'.$_FILES['third-picture']['name'];
+    
+    //image3
+    $extension = substr(strrchr($_FILES['third-picture']['name'],'.'),1);
+    $timeStamp = mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
+    $fileName = $timeStamp.'.'.$extension;
+    
+    $destThirdPicture = 'C:\wamp64\www\projet_5\public\uploads\third-picture\\'.$fileName;
     move_uploaded_file($_FILES['third-picture']['tmp_name'],$destThirdPicture);
+    
     
     header('Location:index.php?action=showDashboard'); 
 }

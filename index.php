@@ -5,6 +5,7 @@ require('controller/frontend.php');
 require('controller/backend.php');
 
 try {
+    
     if (isset($_GET['action'])) {
         
         if ($_GET['action'] == 'listProjects') {
@@ -40,12 +41,19 @@ try {
         
         
         elseif($_GET['action'] == 'user_registration') {
-            if(isset($_POST['login']) && isset($_POST['password1']) && isset($_POST['password2']) && isset($_POST['email'])){
-                if(!empty($_POST['login']) && !empty($_POST['password1']) && !empty($_POST['password2']) && !empty($_POST['email'])) {
+            
+            $login = $_POST['login'];
+            $password1 = $_POST['password1'];
+            $password2 = $_POST['password2'];
+            $email = $_POST['email'];
+            
+            if(isset($login) && isset($password1) && isset($password2) && isset($email)){
+                
+                if(!empty($login) && !empty($password1) && !empty($password2) && !empty($email)) {
                     
-                    if($_POST['password1'] == $_POST['password2']) {
+                    if($password1 == $password2) {
                         
-                        addUser($_POST['login'], $_POST['password1'], $_POST['password1'], $_POST['email']);
+                        addUser($login, $password1, $email);
  
                     }
                 }  
@@ -66,6 +74,7 @@ try {
         }
         
         elseif($_GET['action'] == 'admin_connexion'){
+            
             if(isset($_POST['login']) AND isset($_POST['password'])){
                 
                 if(!empty($_POST['login']) AND !empty($_POST['password'])){
@@ -77,6 +86,7 @@ try {
         }
         
         elseif($_GET['action'] == 'showDashboard'){
+            
             if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
                 
                 if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){ 
@@ -91,9 +101,11 @@ try {
         }
         
         elseif($_GET['action'] == 'createNewProject'){
+            
             if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
                 
                 if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    
                     getCreateProjectPage();
                 }
             }else{
@@ -102,33 +114,54 @@ try {
         }
         
         elseif($_GET['action'] == 'sendProject'){
+            
             if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
                 
                 if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
                     
-                    if(isset($_POST['project_title']) AND isset($_POST['short_description']) AND isset($_POST['complete_description']) AND isset($_POST['website_link']) AND isset($_POST['skills'])){
-                
-                        if(!empty($_POST['project_title']) AND !empty($_POST['short_description']) AND !empty($_POST['complete_description']) AND !empty($_POST['website_link']) AND !empty($_POST['skills'])){
-                            
-                            if(isset($_FILES['first-picture']) AND isset($_FILES['second-picture']) AND isset($_FILES['third-picture'])) {
-                                
-                                if($_FILES['first-picture']['error'] == 0 AND $_FILES['second-picture']['error'] == 0 AND $_FILES['third-picture']['error'] == 0) {
+                    $title = $_POST['project_title'];
+                    $shortDesc = $_POST['short_description'];
+                    $completeDesc = $_POST['complete_description'];
+                    $website = $_POST['website_link'];
+                    $skills = $_POST['skills'];
+                    $firstPic = $_FILES['first-picture'];
+                    $secondPic = $_FILES['second-picture'];
+                    $thirdPic = $_FILES['third-picture'];
                                     
-                                    if($_FILES['first-picture']['size']<5242880 AND $_FILES['second-picture']['size']<5242880 AND $_FILES['third-picture']['size']<5242880) {
+                    
+                    if(isset($title ) AND isset($shortDesc) AND isset($completeDesc) AND isset($website) AND isset($skills) AND isset($firstPic) AND isset($secondPic) AND isset($thirdPic)) {
+                
+                        if(!empty($title ) AND !empty($shortDesc) AND !empty($completeDesc) AND !empty($website) AND !empty($skills)){
+                            
+                            /*function verifPicture ($picture) {
+                                
+                                if($picture['error'] == 0 AND $picture['size']<5242880) {
+                                    
+                                    if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg') {
                                         
-                                        $extension = substr(strrchr($_FILES['first-picture']['name'],'.'),1);
+                                        ?? 
+                                    } 
+                                }  
+                            } */
+                                
+                                if($firstPic['error'] == 0 AND $secondPic['error'] == 0 AND $thirdPic['error'] == 0) {
+                                    
+                                    if($firstPic['size']<5242880 AND $secondPic['size']<5242880 AND $thirdPic['size']<5242880) {
+                                        
+                                        $extension = substr(strrchr($firstPic['name'],'.'),1);
                                         
                                         if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg') {
                                             
-                                            $extension = substr(strrchr($_FILES['second-picture']['name'],'.'),1);
+                                            $extension = substr(strrchr($secondPic['name'],'.'),1);
                                         
                                             if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg') {
                                                 
-                                                $extension = substr(strrchr($_FILES['third-picture']['name'],'.'),1);
+                                                $extension = substr(strrchr($thirdPic['name'],'.'),1);
                                         
                                                 if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg') {
                             
-                                                    sendProject($_POST['project_title'], $_POST['short_description'], $_POST['complete_description'], $_POST['website_link'], $_POST['skills'], $_FILES['first-picture'], $_FILES['second-picture'], $_FILES['third-picture']);
+                                                    sendProject($title, $shortDesc, $completeDesc, $website, $skills, $firstPic, $secondPic, $thirdPic); 
+                                                    
                                                 } else { echo 'probleme extension image 3';} 
                                                 
                                             } else { echo 'probleme extension image 2';}       
@@ -137,9 +170,8 @@ try {
                                         
                                     } else { echo "erreur sur taille";}
                                     
-                                } else {echo 'erreur firstPicture: '.$_FILES['first-picture']['error']. 'puis erreur 2ndPicture: '.$_FILES['second-picture']['error']. 'puis erreur 3rd Pictuer: '.$_FILES['third-picture']['error'];}
-                                
-                            } else {echo "pas de champ image";}
+                                } else {echo 'erreur firstPicture: '.$_FILES['first-picture']['error']. 'puis erreur 2ndPicture: '.$_FILES['second-picture']['error']. 'puis erreur 3rd Pictuer: '.$_FILES['third-picture']['error'];
+                            } 
                         }
                     } 
                 }

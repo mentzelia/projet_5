@@ -51,7 +51,7 @@ function GetRegisterForm()
     require('view/frontend/registerView.php');
 }
 
-function addUser($login, $password1, $password2, $email)
+function addUser($login, $password1, $email)
 {
     $userManager = new OpenClassRooms\Duboscq\Virginie\UserManager();
     
