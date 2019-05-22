@@ -21,7 +21,7 @@ function getCreateProjectPage(){
     require('view/backend/createProjectView.php');
 }
 
-function sendPictureFolder($file, $pictureFolder){
+function sendPictureInFolder($file, $pictureFolder){
     
     $extension = substr(strrchr($file['name'],'.'),1);
     
@@ -32,6 +32,15 @@ function sendPictureFolder($file, $pictureFolder){
     $destPicture = $_SERVER["DOCUMENT_ROOT"].'/projet_5/public/uploads/'.$pictureFolder.'/'.$fileName;
     
     move_uploaded_file($file['tmp_name'],$destPicture);
+    
+}
+
+function sendFirstPictureInDb ($project_id, $src) {
+    
+    $pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
+    
+    $pictures = $pictureManager->sendFirstPicture($project_id, $src);
+    
     
 }
 
@@ -47,12 +56,19 @@ function sendProject($project_title, $short_description, $complete_description, 
     
     $sendProject = $projectManager->sendProject($project_title, $short_description, $complete_description, $website_link, $skills);
     
-    //pictures sending
-    $picture1 = sendPictureFolder($firstPicture, 'first-picture');
-    $picture2 = sendPictureFolder($secondPicture, 'second-picture');
-    $picture3 = sendPictureFolder($thirdPicture, 'third-picture');
     
-
+    //pictures sending in Folder
+    $picture1 = sendPictureInFolder($firstPicture, 'first-picture');
+    $picture2 = sendPictureInFolder($secondPicture, 'second-picture');
+    $picture3 = sendPictureInFolder($thirdPicture, 'third-picture');
+    
+   /* 
+    //pictures sending in DB
+    $project_id = ?;
+    $src = ?;
+    $pictureDb1 = sendFirstPictureInDb ($project_id, $src);
+*/
+    
     header('Location:index.php?action=showDashboard'); 
 }
 

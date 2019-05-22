@@ -23,6 +23,16 @@ class PictureManager extends Manager
         return $pictures;
     }
     
+    public function sendFirstPicture($project_id, $src)
+    {
+        $db = $this->dbConnect();
+        $picture = $db->prepare('INSERT INTO pictures (project_id, src, first_picture) VALUES(?, ?, 1');
+        $data= $picture->execute(array($project_id, $src));
+
+        return $data;
+        
+    }
+    
     
     
 }
