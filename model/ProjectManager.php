@@ -29,9 +29,7 @@ class ProjectManager extends Manager
         $projects = $db->prepare('INSERT INTO projects(project_title, short_description, complete_description, website_link, skills, creation_date) VALUES(?, ?, ?, ?, ?, NOW())');
         $dataProject= $projects->execute(array($project_title, $short_description, $complete_description, $website_link, $skills));
 
-        return $dataProject;
-        
-        $req->closeCursor();  
+        return $dataProject; 
         
     }
     
@@ -41,9 +39,7 @@ class ProjectManager extends Manager
         $projects = $db->prepare('UPDATE projects SET project_title = ?, short_description = ?, complete_description = ?, website_link = ?, skills = ? WHERE id = ?');
         $dataProject = $projects->execute(array($project_title, $short_description, $complete_description, $website_link, $skills, $projectId));
 
-        return $dataProject;
-        
-        $req->closeCursor();  
+        return $dataProject; 
         
     }
     
@@ -54,8 +50,7 @@ class ProjectManager extends Manager
         $deletedProject = $projects->execute(array($projectId));
 
         return $deletedProject;
-        
-        $req->closeCursor();
+
     }
     
 }

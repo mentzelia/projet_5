@@ -33,7 +33,6 @@ class UserManager extends Manager
                 return $error = 'Erreur';
             } 
         }
-        $req->closeCursor(); 
 }
     
     public function getUserData($login)
@@ -44,8 +43,7 @@ class UserManager extends Manager
         $data = $req->fetch();
         
         return $data;
-        
-        $req->closeCursor();
+    
     }
     
     
