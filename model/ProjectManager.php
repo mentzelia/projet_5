@@ -16,11 +16,25 @@ class ProjectManager extends Manager
     public function getProject($projectId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, project_title, short_description, complete_description, website_link, skills, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM projects WHERE id = ?');
+        $req = $db->prepare('SELECT *, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM projects WHERE id = ?');
         $req->execute(array($projectId));
         $project = $req->fetch();
 
         return $project;
+        
+        $req -> closeCursor();
+    }
+    
+    public function getProjectId($timestamp)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id FROM projects WHERE timestamp = ?');
+        $req->execute(array($timestamp));
+        $projectId = $req->fetch();
+
+        return $projectId;
+        
+        $req -> closeCursor();
     }
     
     public function sendProject($project_title, $short_description, $complete_description, $website_link, $skills)

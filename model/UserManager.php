@@ -43,6 +43,8 @@ class UserManager extends Manager
         $data = $req->fetch();
         
         return $data;
+        
+        $req -> closeCursor();
     
     }
     

@@ -33,15 +33,18 @@ function sendPictureInFolder($file, $pictureFolder){
     
     move_uploaded_file($file['tmp_name'],$destPicture);
     
+    return $destPicture;
+    
 }
 
-function sendFirstPictureInDb ($project_id, $src) {
+function sendPictures($projectId, $src1, $src2, $src3) {
     
+    //sendFirstPicture
     $pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
     
-    $pictures = $pictureManager->sendFirstPicture($project_id, $src);
-    
-    
+    $sendFirstPicture = $pictureManager->sendFirstPicture($projectId, $src1);
+    $sendPicture = $pictureManager->sendPicture($projectId, $src2);
+    $sendPicture = $pictureManager->sendPicture($projectId, $src3);
 }
 
 function sendProject($project_title, $short_description, $complete_description, $website_link, $skills, $firstPicture, $secondPicture, $thirdPicture){
@@ -55,21 +58,32 @@ function sendProject($project_title, $short_description, $complete_description, 
     $skills = htmlspecialchars($skills);
     
     $sendProject = $projectManager->sendProject($project_title, $short_description, $complete_description, $website_link, $skills);
+
     
-    
-    //pictures sending in Folder
+    //pictures sending in Folder -> retourne le chemin du fichier
     $picture1 = sendPictureInFolder($firstPicture, 'first-picture');
     $picture2 = sendPictureInFolder($secondPicture, 'second-picture');
     $picture3 = sendPictureInFolder($thirdPicture, 'third-picture');
     
-   /* 
-    //pictures sending in DB
-    $project_id = ?;
-    $src = ?;
-    $pictureDb1 = sendFirstPictureInDb ($project_id, $src);
-*/
     
-    header('Location:index.php?action=showDashboard'); 
+    //recuperer la valeur du timestamp - nom du fichier sans l'extension
+    $ext = pathinfo($picture1, PATHINFO_EXTENSION);
+    $file = basename($picture1,".".$ext);
+    
+    
+    //recupérer l'id du projet 
+    //$projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
+    //$getProjectId = $projectManager->getProjectId($file);
+    
+  
+    //pictures sending in DB
+    $projectId = 5;
+    $sentPictures = sendPictures($projectId, $picture1, $picture2, $picture3);
+    
+    
+    
+    
+    //header('Location:index.php?action=showDashboard'); 
 }
 
 function getProjectToModify(){
