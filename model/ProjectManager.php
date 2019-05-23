@@ -28,7 +28,7 @@ class ProjectManager extends Manager
     public function getProjectId($timestamp)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id FROM projects WHERE timestamp = ?');
+        $req = $db->prepare('SELECT id FROM projects WHERE timestamp=?');
         $req->execute(array($timestamp));
         $projectId = $req->fetch();
 

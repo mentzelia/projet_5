@@ -78,6 +78,9 @@ function sendProject($project_title, $short_description, $complete_description, 
   
     //pictures sending in DB
     $projectId = 5;
+    $picture1 = htmlspecialchars($picture1);
+    $picture2 = htmlspecialchars($picture2);
+    $picture3 = htmlspecialchars($picture3);
     $sentPictures = sendPictures($projectId, $picture1, $picture2, $picture3);
     
     
@@ -94,11 +97,21 @@ function getProjectToModify(){
     require('view/backend/listProjectsView.php'); 
 }
 
+function deletedPictures($projectId)
+{
+    $pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
+    
+    $pictures = $pictureManager->deletePicture($projectId);
+}
+
 function modifyProject($projectId)
 {
+    $deletedPictures = deletedPictures($projectId);
+    
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
 
     $project = $projectManager->getProject($projectId);
+
 
     require('view/backend/modifyProjectView.php');
 }

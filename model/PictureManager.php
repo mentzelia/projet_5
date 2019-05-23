@@ -42,5 +42,15 @@ class PictureManager extends Manager
         return $data;
     }
     
+    public function deletePicture($projectId)
+    {
+        $db = $this->dbConnect();
+        $pictures = $db->prepare('DELETE FROM pictures WHERE project_id = ?');
+        $deletedPictures = $pictures->execute(array($projectId));
+
+        return $deletedPictures;
+
+    }
+    
     
 }
