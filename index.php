@@ -209,8 +209,11 @@ try {
                 if(generalVerification($title) AND generalVerification($shortDesc) AND generalVerification($completeDesc) AND generalVerification($website) AND generalVerification($skills) AND generalVerification($firstPic) AND generalVerification($secondPic) AND generalVerification($thirdPic)) {
 
                     if (isset($id) && $id > 0){
+                        
+                        if (verifPicture($firstPic) AND verifPicture($secondPic) AND verifPicture($thirdPic)) {
 
-                        sendModifiedProject($title, $shortDesc, $completeDesc, $website, $skills, $id);
+                            sendModifiedProject($title, $shortDesc, $completeDesc, $website, $skills, $id, $firstPic, $secondPic, $thirdPic);
+                        }
                     } 
                 } 
             }

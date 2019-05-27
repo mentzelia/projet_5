@@ -106,19 +106,20 @@ function deletedPictures($projectId)
 
 function modifyProject($projectId)
 {
+    //delete old photos
     $deletedPictures = deletedPictures($projectId);
     
+    //get data from db
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
-
     $project = $projectManager->getProject($projectId);
 
 
     require('view/backend/modifyProjectView.php');
 }
 
-function sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId)
+function sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId, $firstPicture, $secondPicture, $thirdPicture)
 {
-    
+    //send new data
     $projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
     
     $project_title = htmlspecialchars($project_title);
@@ -128,6 +129,18 @@ function sendModifiedProject($project_title, $short_description, $complete_descr
 
     
     $sendModifiedProject = $projectManager->sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId);
+    /*
+    //send new pictures in folder
+    $picture1 = sendPictureInFolder($firstPicture, 'first-picture');
+    $picture2 = sendPictureInFolder($secondPicture, 'second-picture');
+    $picture3 = sendPictureInFolder($thirdPicture, 'third-picture');
+    
+    //send in db
+    $picture1 = htmlspecialchars($picture1);
+    $picture2 = htmlspecialchars($picture2);
+    $picture3 = htmlspecialchars($picture3);
+    $sentPictures = sendPictures($projectId, $picture1, $picture2, $picture3);
+    */
     
     header('Location:index.php?action=showDashboard'); 
     

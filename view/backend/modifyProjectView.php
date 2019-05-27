@@ -32,7 +32,7 @@
 
             <h2>Modifier un projet</h2>
 
-            <form class="project-form" method="post" action="index.php?action=updateProject&id=<?= $projectId ?>">
+            <form class="project-form" method="post" action="index.php?action=updateProject&id=<?= $projectId ?>" enctype="multipart/form-data">
 
                 <label for="project_title">Titre du projet:</label>
                 <input type= "text" name="project_title" value="<?= $project['project_title'] ?>" />
@@ -66,6 +66,7 @@
                 <label for="third-picture">Troisième image (JPG, JPEG ou PNG | max. 5 Mo) :</label><br />
                 <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
                 <input type="file" name="third-picture" id="third-picture" /><br />
+                
 
                 <input class="project-form-button" type="submit" value="Modifier" />
 

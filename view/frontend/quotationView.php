@@ -14,90 +14,66 @@ ob_start();
     
     <h2>Simuler votre devis en ligne</h2>
     
+    
     <div id="quotation-form">
         
         <h3>Type de projet</h3>
-            <section>
-                <h4>Sélectionnez votre type de projet:</h4>
-                <div class="input-section">
-                    <input id="showcaseBasic" name="showcaseBasic" type="radio" class="required">
-                    <label for="showcaseBasic">Site vitrine</label>
-                </div>
+        <section>
+            <p>Sélectionnez votre type de projet:</p>
+            <input id="showcaseBasic" name="showcaseBasic" type="radio" class="required">
+            <label for="showcaseBasic">Site vitrine</label>
+            <input id="showcaseAppointment" name="showcaseAppointment" type="radio" class="required">
+            <label for="showcaseAppointment">Site avec réservation de rendez-vous en ligne</label>
+            <input id="ecommerce" name="ecommerce" type="radio" class="required">
+            <label for="ecommerce">Site de e-commerce</label>
 
-                <div class="input-section">
-                    <input id="showcaseAppointment" name="showcaseAppointment" type="radio" class="required">
-                    <label for="showcaseAppointment">Site avec réservation de rendez-vous en ligne</label>
-                </div>
-
-                <div class="input-section">
-                    <input id="ecommerce" name="ecommerce" type="radio" class="required">
-                    <label for="ecommerce">Site de e-commerce</label>
-                </div>
-                
-                <p>(*) Champs requis</p>
+            <p>(*) Champs requis</p>
         </section>
+
         
         <h3>Nombre de pages</h3>
             <section>
-                <h4>Sélectionnez le nombre de pages dont vous pensez avoir besoin: </h4>
-                
-                
-                <div class="input-section">
-                <input id="max5" name="max5" type="radio" class="required">
+                <p>Sélectionnez le nombre de pages dont vous pensez avoir besoin: </p>
                 <label for="max5">1 à 5 pages</label>
-                </div>
-                
-                <div class="input-section">
-                    <input id="max10" name="max10" type="radio" class="required">
-                    <label for="max10">6 à 10 pages</label>
-                </div>
-                
-                <div class="input-section">
-                    <input id="max15" name="max15" type="radio" class="required">
-                    <label for="max15">11 à 15 pages</label>
-                </div>
-                
+                <input id="max5" name="max5" type="radio" class="required">
+                <br/>
+                <label for="max10">6 à 10 pages</label>
+                <input id="max10" name="max10" type="radio" class="required">
+                <br/>
+                <label for="max15">11 à 15 pages</label>
+                <input id="max15" name="max15" type="radio" class="required">
+                <br/>
                 <p>(*) Champs requis</p>
             </section>
-        
-        <h3>Vos coordonnées</h3>
+ 
+            
+            <h3>Vos coordonnées</h3>
             <section>
-                <h4>Veuillez renseigner vos coordonnées:</h4>
-                
-                <div class="input-section">
-                    <label for="firstName">Prénom *</label>
-                    <input id="firstName" name="firstName" type="text" class="required">
-                </div>
-                
-                <div class="input-section">
-                    <label for="lastName">Nom *</label>
-                    <input id="lastName" name="lastName" type="text" class="required">
-                </div>
-                
-                <div class="input-section">
-                    <label for="email">Email *</label>
-                    <input id="email" name="email" type="text" class="required email">
-                </div>
-                
+                <p>Veuillez renseigner vos coordonnées:</p>
+                <label for="firstName">Prénom *</label>
+                <input id="firstName" name="firstName" type="text" class="required">
+                <br/>
+                <label for="lastName">Nom *</label>
+                <input id="lastName" name="lastName" type="text" class="required">
+                <br/>
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="text" class="required email">
+                <br/>
                 <p>(*) Champs requis</p>
-        </section>
-        
-        <h3>Termes et conditions</h3>
+            </section>
+
+            
+            <h3>Termes et conditions</h3>
             <section>
-                <h4>Veuillez accepter les conditions de traitement des données</h4>
-                
-                <div class="input-section">
-                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">En soumettant ce formulaire, j'accepte que les informations saisies soient utilisées uniquement dans le cadre de ma demande et de la relation commerciale éthique et personnalisée qui peut en découler.</label>
-                </div>
+                <p>Veuillez accepter les conditions de traitement des données</p>
+                <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">En soumettant ce formulaire, j'accepte que les informations saisies soient utilisées uniquement dans le cadre de ma demande et de la relation commerciale éthique et personnalisée qui peut en découler.</label>
             </section>
         
-        <h3>Votre devis</h3>
+            <h3>Votre devis</h3>
             <section>
-                <h4>Voici la simulation de votre devis (sous réserve de modification ultérieure):</h4>
-                <p>Le devis calculé s'affiche ici</p>
+                <p>Merci pour votre confiance. Vous recevrez votre devis par mail d'ici 48 heures (jours ouvrés). Pensez à vérifier votre courrier indésirable.</p>
             </section>
-        
-    </div>
+</div>
                
 </section>
 
