@@ -14,66 +14,68 @@ ob_start();
     
     <h2>Simuler votre devis en ligne</h2>
     
-    
-    <div id="quotation-form">
-        
-        <h3>Type de projet</h3>
-        <section>
-            <p>Sélectionnez votre type de projet:</p>
-            <input id="showcaseBasic" name="showcaseBasic" type="radio" class="required">
-            <label for="showcaseBasic">Site vitrine</label>
-            <input id="showcaseAppointment" name="showcaseAppointment" type="radio" class="required">
-            <label for="showcaseAppointment">Site avec réservation de rendez-vous en ligne</label>
-            <input id="ecommerce" name="ecommerce" type="radio" class="required">
-            <label for="ecommerce">Site de e-commerce</label>
+    <form id="quotation-form" action= ''>
+        <div>
 
-            <p>(*) Champs requis</p>
-        </section>
+            <h3>Type de projet</h3>
+            <fieldset>
+                <p>Sélectionnez votre type de projet:*</p>
+                <input id="showcaseBasic" name="showcaseBasic" type="radio" required>
+                <label for="showcaseBasic">Site vitrine</label>
+                <input id="showcaseAppointment" name="showcaseAppointment" type="radio" required>
+                <label for="showcaseAppointment">Site avec réservation de rendez-vous en ligne</label>
+                <input id="ecommerce" name="ecommerce" type="radio" required>
+                <label for="ecommerce">Site de e-commerce</label>
 
-        
-        <h3>Nombre de pages</h3>
-            <section>
-                <p>Sélectionnez le nombre de pages dont vous pensez avoir besoin: </p>
+                <p>(*) Obligatoire</p>
+            </fieldset>
+
+
+            <h3>Nombre de pages</h3>
+            <fieldset>
+                <p>Sélectionnez le nombre de pages dont vous pensez avoir besoin:* </p>
+                <input id="max5" name="max5" type="radio" required>
                 <label for="max5">1 à 5 pages</label>
-                <input id="max5" name="max5" type="radio" class="required">
                 <br/>
-                <label for="max10">6 à 10 pages</label>
-                <input id="max10" name="max10" type="radio" class="required">
+                <input id="max10" name="max10" type="radio" required>
+                 <label for="max10">6 à 10 pages</label>
                 <br/>
+                <input id="max15" name="max15" type="radio" required>
                 <label for="max15">11 à 15 pages</label>
-                <input id="max15" name="max15" type="radio" class="required">
                 <br/>
-                <p>(*) Champs requis</p>
-            </section>
- 
-            
-            <h3>Vos coordonnées</h3>
-            <section>
-                <p>Veuillez renseigner vos coordonnées:</p>
-                <label for="firstName">Prénom *</label>
-                <input id="firstName" name="firstName" type="text" class="required">
-                <br/>
-                <label for="lastName">Nom *</label>
-                <input id="lastName" name="lastName" type="text" class="required">
-                <br/>
-                <label for="email">Email *</label>
-                <input id="email" name="email" type="text" class="required email">
-                <br/>
-                <p>(*) Champs requis</p>
-            </section>
+                <p>(*) Obligatoire</p>
+            </fieldset>
 
-            
+
+            <h3>Vos coordonnées</h3>
+            <fieldset>
+                <p>Veuillez renseigner vos coordonnées:*</p>
+                <label for="firstName">Prénom </label>
+                <input id="firstName" name="firstName" type="text" required>
+                <br/>
+                <label for="lastName">Nom </label>
+                <input id="lastName" name="lastName" type="text" required>
+                <br/>
+                <label for="email">Email </label>
+                <input id="email" name="email" type="text" required>
+                <br/>
+                <p>(*) Obligatoire</p>
+            </fieldset>
+
+
             <h3>Termes et conditions</h3>
-            <section>
-                <p>Veuillez accepter les conditions de traitement des données</p>
-                <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">En soumettant ce formulaire, j'accepte que les informations saisies soient utilisées uniquement dans le cadre de ma demande et de la relation commerciale éthique et personnalisée qui peut en découler.</label>
-            </section>
-        
+            <fieldset>
+                <p>Veuillez accepter les conditions de traitement des données*</p>
+                <input id="acceptTerms" name="acceptTerms" type="checkbox" required> <label for="acceptTerms">En soumettant ce formulaire, j'accepte que les informations saisies soient utilisées uniquement dans le cadre de ma demande et de la relation commerciale éthique et personnalisée qui peut en découler.</label>
+                <p>(*) Obligatoire</p>
+            </fieldset>
+
             <h3>Votre devis</h3>
-            <section>
+            <fieldset>
                 <p>Merci pour votre confiance. Vous recevrez votre devis par mail d'ici 48 heures (jours ouvrés). Pensez à vérifier votre courrier indésirable.</p>
-            </section>
-</div>
+            </fieldset>
+        </div>
+    </form>
                
 </section>
 

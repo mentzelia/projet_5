@@ -29,22 +29,22 @@ function sendPictureInFolder($file, $pictureFolder){
     
     $fileName = $timeStamp.'.'.$extension;
     
-    $destPicture = $_SERVER["DOCUMENT_ROOT"].'/projet_5/public/uploads/'.$pictureFolder.'/'.$fileName;
+    $destPicture = $pictureFolder.'/'.$fileName;
     
-    move_uploaded_file($file['tmp_name'],$destPicture);
+    move_uploaded_file($file['tmp_name'],$_SERVER["DOCUMENT_ROOT"].'/projet_5/public/uploads/'.$destPicture);
     
     return $destPicture;
     
 }
 
-function sendPictures($projectId, $src1, $src2, $src3) {
+function sendPictures($project_id, $src1, $src2, $src3) {
     
     //sendFirstPicture
     $pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
     
-    $sendFirstPicture = $pictureManager->sendFirstPicture($projectId, $src1);
-    $sendPicture = $pictureManager->sendPicture($projectId, $src2);
-    $sendPicture = $pictureManager->sendPicture($projectId, $src3);
+    $sendFirstPicture = $pictureManager->sendFirstPicture($project_id, $src1);
+    $sendPicture = $pictureManager->sendPicture($project_id, $src2);
+    $sendPicture = $pictureManager->sendPicture($project_id, $src3);
 }
 
 function sendProject($project_title, $short_description, $complete_description, $website_link, $skills, $firstPicture, $secondPicture, $thirdPicture){
@@ -57,7 +57,8 @@ function sendProject($project_title, $short_description, $complete_description, 
     $website_link = htmlspecialchars($website_link);
     $skills = htmlspecialchars($skills);
     
-    $sendProject = $projectManager->sendProject($project_title, $short_description, $complete_description, $website_link, $skills);
+    $project_id = $projectManager->sendProject($project_title, $short_description, $complete_description, $website_link, $skills);
+    
 
     
     //pictures sending in Folder -> retourne le chemin du fichier
@@ -65,28 +66,15 @@ function sendProject($project_title, $short_description, $complete_description, 
     $picture2 = sendPictureInFolder($secondPicture, 'second-picture');
     $picture3 = sendPictureInFolder($thirdPicture, 'third-picture');
     
-    
-    //recuperer la valeur du timestamp - nom du fichier sans l'extension
-    $ext = pathinfo($picture1, PATHINFO_EXTENSION);
-    $file = basename($picture1,".".$ext);
-    
-    
-    //recupérer l'id du projet 
-    //$projectManager = new OpenClassRooms\Duboscq\Virginie\ProjectManager();
-    //$getProjectId = $projectManager->getProjectId($file);
-    
+
   
-    //pictures sending in DB
-    $projectId = 5;
+    //pictures sending in DB 
     $picture1 = htmlspecialchars($picture1);
     $picture2 = htmlspecialchars($picture2);
     $picture3 = htmlspecialchars($picture3);
-    $sentPictures = sendPictures($projectId, $picture1, $picture2, $picture3);
+    $sentPictures = sendPictures($project_id, $picture1, $picture2, $picture3);
     
-    
-    
-    
-    //header('Location:index.php?action=showDashboard'); 
+    header('Location:index.php?action=showDashboard'); 
 }
 
 function getProjectToModify(){

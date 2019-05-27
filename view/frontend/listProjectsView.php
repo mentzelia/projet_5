@@ -26,7 +26,7 @@ while ($data = $projects->fetch())
 
     <figure>
 
-        <img class="image" src="<?= $data['src']; ?>" alt="image du projet d'une agence web" />
+        <img class="image" src="public/uploads/<?= $data['src']; ?>" alt="image du projet d'une agence web" />
 
         <figcaption>
 

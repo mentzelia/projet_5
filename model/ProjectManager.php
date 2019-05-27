@@ -42,8 +42,8 @@ class ProjectManager extends Manager
         $db = $this->dbConnect();
         $projects = $db->prepare('INSERT INTO projects(project_title, short_description, complete_description, website_link, skills, creation_date) VALUES(?, ?, ?, ?, ?, NOW())');
         $dataProject= $projects->execute(array($project_title, $short_description, $complete_description, $website_link, $skills));
-
-        return $dataProject; 
+        
+        return $db->lastInsertId(); 
         
     }
     
