@@ -18,6 +18,7 @@ function logOutSession()
 }
 
 function getCreateProjectPage(){
+    
     require('view/backend/createProjectView.php');
 }
 
@@ -39,10 +40,10 @@ function sendPictureInFolder($file, $pictureFolder){
 
 function sendPictures($project_id, $src1, $src2, $src3) {
     
-    //sendFirstPicture
     $pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
     
     $sendFirstPicture = $pictureManager->sendFirstPicture($project_id, $src1);
+    
     $sendPicture = $pictureManager->sendPicture($project_id, $src2);
     $sendPicture = $pictureManager->sendPicture($project_id, $src3);
 }
@@ -85,11 +86,11 @@ function getProjectToModify(){
     require('view/backend/listProjectsView.php'); 
 }
 
-function deletedPictures($projectId)
+function deletedPictures($project_id)
 {
     $pictureManager = new OpenClassRooms\Duboscq\Virginie\PictureManager();
     
-    $pictures = $pictureManager->deletePicture($projectId);
+    $pictures = $pictureManager->deletePicture($project_id);
 }
 
 function modifyProject($projectId)
@@ -116,19 +117,23 @@ function sendModifiedProject($project_title, $short_description, $complete_descr
     $skills = htmlspecialchars($skills);
 
     
-    $sendModifiedProject = $projectManager->sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId);
-    /*
-    //send new pictures in folder
+    $sendModifiedProject_id = $projectManager->sendModifiedProject($project_title, $short_description, $complete_description, $website_link, $skills, $projectId);
+    
+    //delete old pictures
+    $deletedPictures = deletedPictures($sendModifiedProject_id);
+    
+    //pictures sending in Folder -> retourne le chemin du fichier
     $picture1 = sendPictureInFolder($firstPicture, 'first-picture');
     $picture2 = sendPictureInFolder($secondPicture, 'second-picture');
     $picture3 = sendPictureInFolder($thirdPicture, 'third-picture');
     
-    //send in db
+
+  
+    //pictures sending in DB 
     $picture1 = htmlspecialchars($picture1);
     $picture2 = htmlspecialchars($picture2);
     $picture3 = htmlspecialchars($picture3);
-    $sentPictures = sendPictures($projectId, $picture1, $picture2, $picture3);
-    */
+    $sentPictures = sendPictures($sendModifiedProject_id, $picture1, $picture2, $picture3);
     
     header('Location:index.php?action=showDashboard'); 
     

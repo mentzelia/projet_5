@@ -29,7 +29,8 @@ while ($data = $pictures->fetch())
 {
 ?>
 
-            <img class="image" src="<?= $data['src'] ;?>" />
+            <img class="image" src="public/uploads/<?= $data['src']; ?>" />
+            
 
 <?php
 }

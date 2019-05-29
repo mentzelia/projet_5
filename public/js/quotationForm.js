@@ -1,25 +1,23 @@
-var form = $("#quotation-form");
-
-/*form.validate({
-    errorPlacement: function errorPlacement(error, element) { element.before(error); },
-    rules: {
-        confirm: {
-            equalTo: "#password"
-        }
-    }
-}); */
+var form = $("#quotation-form").show();
 
 form.children("div").steps({
     headerTag: "h3",
     bodyTag: "fieldset",
-    transitionEffect: "slideLeft"
+    transitionEffect: "slideLeft",
+    autoFocus: true,
+    enableAllSteps: true
 });
 
-    
-    /*
-$("#quotation-form").steps({
-    headerTag: "h3",
-    bodyTag: "section",
-    transitionEffect: "slideLeft",
-    autoFocus: true
-}); */
+onStepChanging: function (event, currentIndex, newIndex)
+{
+    document.getElementById(?).addEventListener("input", )
+    {
+        return true;
+    }
+
+onFinished: function (event, currentIndex)
+{
+    var form = $("#quotation-form");
+
+    form.submit();
+}
