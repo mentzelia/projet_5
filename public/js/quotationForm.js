@@ -53,9 +53,5 @@ form.steps({
     }
 }).validate({
     errorPlacement: function errorPlacement(error, element) { element.before(error); },
-    rules: {
-        confirm: {
-            equalTo: "#password-2"
-        }
-    }
+   
 });
