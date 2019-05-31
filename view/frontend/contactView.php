@@ -31,7 +31,7 @@ ob_start();
 
 <div class="contact-form">
 
-        <form method="post" action="" name="cform" id="cform">
+        <form method="post" action="index.php?action=sendMail" name="cform" id="cform">
 
             <h2 id="form-title">Une question? Contactez-moi!</h2>
 

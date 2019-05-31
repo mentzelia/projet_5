@@ -93,3 +93,23 @@ function verifyUserData($login, $password)
         echo 'Mauvais identifiant ou mot de passe<br /><a href="index.php?action=log_in">Retour</a>'; 
     } 
 }
+
+function sendMail($name, $email, $message)
+{
+    $name = htmlspecialchars($name);
+    $email = htmlspecialchars($email);
+    $message = htmlspecialchars($message);
+    
+    $to = "vi.duboscq@gmail.com";
+    $object = "Vous avez eu un message depuis votre formulaire de contact";
+    $headers = "From: $name send by: $email";
+    
+    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email))
+    {
+        mail($to, $object, $message, $headers);
+    
+        header('Location:index.php?action=listProjects');
+        
+    }
+    
+}

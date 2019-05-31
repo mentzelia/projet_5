@@ -237,6 +237,19 @@ try {
             } 
         }
         
+        elseif($_GET['action'] == 'sendMail'){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $message = $_POST['comments'];
+            
+            if(generalVerification($name) AND generalVerification($email) AND generalVerification($message)){
+                
+                sendMail($name, $email, $message);
+            }
+            
+            
+        }
+        
         
     }
     else {
