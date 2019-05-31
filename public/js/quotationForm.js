@@ -50,6 +50,28 @@ form.steps({
             console.log(contactForm_firstName.value);
             console.log(contactForm_email.value);
             console.log(checkboxSelected.id);
+        
+            Email.send({
+                SecureToken: "6e0722d8-ba3d-411c-9ff8-96802774eed0",
+                To : 'vi.duboscq@gmail.com',
+                From : "vi.duboscq@gmail.com",
+                Subject : "Vous avez une nouvelle demande de devis",
+                Body : "Les informations pour devis: " 
+            }).then(
+              message => alert(message)
+            );
+        
+            Email.send({
+                SecureToken: "6e0722d8-ba3d-411c-9ff8-96802774eed0",
+                To : contactForm_email.value,
+                From : "contact@caduceecreations.com",
+                Subject : "Votre devis",
+                Body : "Vous recevrez sous peu votre devis. Je vous remercie de votre confiance. Virginie Duboscq"
+            }).then(
+              message => alert(message)
+            );
+        
+        
     }
 }).validate({
     errorPlacement: function errorPlacement(error, element) { element.before(error); },

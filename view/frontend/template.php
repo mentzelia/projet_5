@@ -134,6 +134,9 @@
             </footer>
                 
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            
+            <script src="https://smtpjs.com/v3/smtp.js">
+            </script>
         
             <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
             
