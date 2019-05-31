@@ -20,11 +20,11 @@ ob_start();
             <h3>Type de projet</h3>
             <fieldset>
                 <p>Sélectionnez votre type de projet:*</p>
-                <input id="showcaseBasic" name="showcaseBasic" type="radio" required>
+                <input id="showcaseBasic" name="project_type" type="radio" required>
                 <label for="showcaseBasic">Site vitrine</label>
-                <input id="showcaseAppointment" name="showcaseAppointment" type="radio" required>
+                <input id="showcaseAppointment" name="project_type" type="radio" required>
                 <label for="showcaseAppointment">Site avec réservation de rendez-vous en ligne</label>
-                <input id="ecommerce" name="ecommerce" type="radio" required>
+                <input id="ecommerce" name="project_type" type="radio" required>
                 <label for="ecommerce">Site de e-commerce</label>
 
                 <p>(*) Obligatoire</p>
@@ -34,13 +34,13 @@ ob_start();
             <h3>Nombre de pages</h3>
             <fieldset>
                 <p>Sélectionnez le nombre de pages dont vous pensez avoir besoin:* </p>
-                <input id="max5" name="max5" type="radio" required>
+                <input id="max5" name="max_page" type="radio" required>
                 <label for="max5">1 à 5 pages</label>
                 <br/>
-                <input id="max10" name="max10" type="radio" required>
+                <input id="max10" name="max_page" type="radio" required>
                  <label for="max10">6 à 10 pages</label>
                 <br/>
-                <input id="max15" name="max15" type="radio" required>
+                <input id="max15" name="max_page" type="radio" required>
                 <label for="max15">11 à 15 pages</label>
                 <br/>
                 <p>(*) Obligatoire</p>
@@ -50,11 +50,11 @@ ob_start();
             <h3>Vos coordonnées</h3>
             <fieldset>
                 <p>Veuillez renseigner vos coordonnées:*</p>
-                <label for="firstName">Prénom </label>
-                <input id="firstName" name="firstName" type="text" required>
-                <br/>
                 <label for="lastName">Nom </label>
                 <input id="lastName" name="lastName" type="text" required>
+                <br/>
+                <label for="firstName">Prénom </label>
+                <input id="firstName" name="firstName" type="text" required>
                 <br/>
                 <label for="email">Email </label>
                 <input id="email" name="email" type="text" required>
@@ -72,7 +72,7 @@ ob_start();
 
             <h3>Votre devis</h3>
             <fieldset>
-                <p>Merci pour votre confiance. Vous recevrez votre devis par mail d'ici 48 heures (jours ouvrés). Pensez à vérifier votre courrier indésirable.</p>
+                <p>Pour valider votre demande de devis, veuillez cliquer sur le bouton "Finish". </p>
             </fieldset>
         </div>
     </form>
