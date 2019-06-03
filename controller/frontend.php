@@ -100,18 +100,61 @@ function sendMail($name, $email, $message)
     $email = htmlspecialchars($email);
     $message = htmlspecialchars($message);
     
-    $to = "vi.duboscq@gmail.com";
-    $object = "Vous avez eu un message depuis votre formulaire de contact";
-    $headers = "From: " . $name . "send by: " . $email;
-    
-    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email))
+    $mailDest = 'vi.duboscq@gmail.com';
+    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mailDest)) // bug verification
     {
-        mail($to, $object, $message, $headers);
+        $break_line = "\r\n";
+    }
+    else
+    {
+        $break_line = "\n";
     }
     
-        header('Location:index.php?action=listProjects');
+    //HTML and text formats
+    $message_txt = "Voici le message de: ".$name. " " .$email. " : " .$message;
+    $message_html = "<html><head></head><body><b>Voici le message de $name ($email): $message </body></html>";
+
+    //Boundary
+    $boundary = "-----=".md5(rand());
+    $boundary_alt = "-----=".md5(rand());
+
+ 
+    $subject = "Vous avez eu un message depuis votre formulaire de contact";
+  
+    $header = "From: \"Portfolio Formulaire de contact\"<contact@caduceecreations.com>".$break_line;
+    $header.= "Reply-to: \"Portfolio\" <contact@caduceecreations.com>".$break_line;
+    $header.= "MIME-Version: 1.0".$break_line;
+    $header.= "Content-Type: multipart/mixed;".$break_line." boundary=\"$boundary\"".$break_line;
+    
+    //Message
+    $message = $break_line."--".$boundary.$break_line;
+    $message.= "Content-Type: multipart/alternative;".$break_line." boundary=\"$boundary_alt\"".$break_line;
+    $message.= $break_line."--".$boundary_alt.$break_line;
+    //text format
+    $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$break_line;
+    $message.= "Content-Transfer-Encoding: 8bit".$break_line;
+    $message.= $break_line.$message_txt.$break_line;
+    
+
+    $message.= $break_line."--".$boundary_alt.$break_line;
+
+    //html format
+    $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$break_line;
+    $message.= "Content-Transfer-Encoding: 8bit".$break_line;
+    $message.= $break_line.$message_html.$break_line;
+   
+    $message.= $break_line."--".$boundary_alt."--".$break_line;
+    
+ 
+   
+    mail($mailDest,$subject,$message,$header);
+
+ 
+    header('Location:index.php?action=listProjects');
     
 }
+
+
 
 function sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, $firstName, $email, $checkboxSelected)
 {
