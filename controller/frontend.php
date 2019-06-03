@@ -100,8 +100,18 @@ function sendMail($name, $email, $message)
     $email = htmlspecialchars($email);
     $message = htmlspecialchars($message);
     
-    $mailDest = 'vi.duboscq@gmail.com';
-    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mailDest)) // bug verification
+    $mailTo = 'vi.duboscq@gmail.com';
+    $message_txt = "Voici le message de: ".$name. " " .$email. " : " .$message;
+    $message_html = "<html><head></head><body><b>Voici le message de $name ($email): $message </body></html>";
+    $subject = "Vous avez eu un message depuis votre formulaire de contact";
+    
+    mailing($mailTo, $message_text, $message_html, $subject );
+    
+}
+
+function mailing($mailTo, $message_text, $message_html, $subject )
+{
+    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mailTo)) // bug verification
     {
         $break_line = "\r\n";
     }
@@ -110,19 +120,12 @@ function sendMail($name, $email, $message)
         $break_line = "\n";
     }
     
-    //HTML and text formats
-    $message_txt = "Voici le message de: ".$name. " " .$email. " : " .$message;
-    $message_html = "<html><head></head><body><b>Voici le message de $name ($email): $message </body></html>";
-
     //Boundary
     $boundary = "-----=".md5(rand());
     $boundary_alt = "-----=".md5(rand());
-
- 
-    $subject = "Vous avez eu un message depuis votre formulaire de contact";
   
-    $header = "From: \"Portfolio Formulaire de contact\"<contact@caduceecreations.com>".$break_line;
-    $header.= "Reply-to: \"Portfolio\" <contact@caduceecreations.com>".$break_line;
+    $header = "From: \"Caducée Créations\"<contact@caduceecreations.com>".$break_line;
+    $header.= "Reply-to: \"Caducée Créations\" <contact@caduceecreations.com>".$break_line;
     $header.= "MIME-Version: 1.0".$break_line;
     $header.= "Content-Type: multipart/mixed;".$break_line." boundary=\"$boundary\"".$break_line;
     
@@ -147,11 +150,10 @@ function sendMail($name, $email, $message)
     
  
    
-    mail($mailDest,$subject,$message,$header);
+    mail($mailTo,$subject,$message,$header);
 
  
     header('Location:index.php?action=listProjects');
-    
 }
 
 
@@ -162,21 +164,26 @@ function sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, 
     $firstName = htmlspecialchars($firstName);
     $email = htmlspecialchars($email);
     
-    $to = "vi.duboscq@gmail.com";
-    $object = "Vous avez eu une demande de devis depuis la simulation en ligne";
-    $headers = "From: " . $lastName . " " . $firstName . "send by: " . $email;
-    $message = "Demande de devis avec les informations suivantes: Coordonnées: " . $lastName . " " . $firstName . " " . $email . 
-    " Infos: " . $radioButtonSelected1 . " " . $radioButtonSelected2 .
-    " Acceptation des termes: " . $checkboxSelected;
     
-    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email))
-        
-    {
-        mail($to, $object, $message, $headers);
-        
-    }
+    //Send me an email
+    $mailTo = 'vi.duboscq@gmail.com';
+    $message = "Type de projet: " .$radioButtonSelected1. " - Nombre de pages max: " .$radioButtonSelected2. " - Termes acceptés: " .$checkboxSelected;
     
-        header('Location:index.php?action=listProjects');
+    $message_txt = "Voici la demande de devis de: ".$lastName. " " .$firstName. " " .$email. " : " .$message;
+    $message_html = "<html><head></head><body><b>Voici la demande de devis de $lastName $firstName ($email): $message </body></html>";
+    $subject = "Vous avez eu une demande de devis";
+    
+    mailing($mailTo, $message_text, $message_html, $subject );
+    
+    
+    //Send email to prospect
+    $mailTo = $email;
+    
+    $message_txt = "Votre demande de devis a bien été envoyée et va être traitée sous 48h (jours ouvrés). Merci de votre confiance";
+    $message_html = "<html><head></head><body><b>Votre demande de devis a bien ëté envoyée et va être traitée sous 48h (jours ouvrés). Merci de votre confiance.</body></html>";
+    $subject = $firstName. ": vous recevrez votre devis sous 48 heures";
+    
+    mailing($mailTo, $message_text, $message_html, $subject );
     
     
    // echo($radioButtonSelected1.$radioButtonSelected2.$lastName.$firstName.$email.$checkboxSelected);
