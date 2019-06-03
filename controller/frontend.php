@@ -102,14 +102,40 @@ function sendMail($name, $email, $message)
     
     $to = "vi.duboscq@gmail.com";
     $object = "Vous avez eu un message depuis votre formulaire de contact";
-    $headers = "From: $name send by: $email";
+    $headers = "From: " . $name . "send by: " . $email;
     
     if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email))
     {
         mail($to, $object, $message, $headers);
+    }
     
         header('Location:index.php?action=listProjects');
+    
+}
+
+function sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, $firstName, $email, $checkboxSelected)
+{
+    $lastName = htmlspecialchars($lastName);
+    $firstName = htmlspecialchars($firstName);
+    $email = htmlspecialchars($email);
+    
+    $to = "vi.duboscq@gmail.com";
+    $object = "Vous avez eu une demande de devis depuis la simulation en ligne";
+    $headers = "From: " . $lastName . " " . $firstName . "send by: " . $email;
+    $message = "Demande de devis avec les informations suivantes: Coordonnées: " . $lastName . " " . $firstName . " " . $email . 
+    " Infos: " . $radioButtonSelected1 . " " . $radioButtonSelected2 .
+    " Acceptation des termes: " . $checkboxSelected;
+    
+    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email))
+        
+    {
+        mail($to, $object, $message, $headers);
         
     }
     
+        header('Location:index.php?action=listProjects');
+    
+    
+   // echo($radioButtonSelected1.$radioButtonSelected2.$lastName.$firstName.$email.$checkboxSelected);
+   
 }

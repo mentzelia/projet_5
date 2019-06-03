@@ -246,8 +246,22 @@ try {
                 
                 sendMail($name, $email, $message);
             }
+        }
+        
+        elseif($_GET['action'] == 'sendQuotation'){
             
+            $radioButtonSelected1 = $_POST['project_type'];
+            $radioButtonSelected2 = $_POST['max_page'];
+            $lastName = $_POST['lastName'];
+            $firstName = $_POST['firstName'];
+            $email = $_POST['email'];
+            $checkboxSelected = $_POST['acceptTerms'];
             
+            if(generalVerification($lastName) AND generalVerification($firstName) AND generalVerification($email)) {
+                
+                sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, $firstName, $email, $checkboxSelected);
+                
+            }
         }
         
         
