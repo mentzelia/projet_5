@@ -121,11 +121,11 @@
 
                  <ul class="social-icons">
 
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.facebook.com/CaduceeCreations" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://twitter.com/VirginieDuboscq" target="_blank"><i class="fab fa-twitter"></i></a></li>
 
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/caduceecreations" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
 
                 </ul>
 
