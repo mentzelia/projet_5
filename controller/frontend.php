@@ -157,7 +157,6 @@ function mailing($mailTo, $message_text, $message_html, $subject )
 }
 
 
-
 function sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, $firstName, $email, $checkboxSelected)
 {
     $lastName = htmlspecialchars($lastName);
@@ -185,7 +184,9 @@ function sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, 
     
     mailing($mailTo, $message_text, $message_html, $subject );
     
-    
-   // echo($radioButtonSelected1.$radioButtonSelected2.$lastName.$firstName.$email.$checkboxSelected);
    
+}
+
+function errorQuotation() {
+    require('view/frontend/errorQuotationView.php');
 }

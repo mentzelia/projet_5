@@ -13,7 +13,11 @@ $title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
 
         <h2><span id="name">Virginie Duboscq</span><br/>Développeuse et intégratrice web</h2>
 
-        <p class="online-link"><i class="fas fa-chalkboard-teacher"><a href="<?= $project['website_link'] ?>" target="_blank">Voir le projet en ligne</a></i></p>
+        <p class="online-link">
+            <i class="fas fa-chalkboard-teacher">
+                <a href="<?= $project['website_link'] ?>" target="_blank">Voir le projet en ligne</a>
+            </i>
+        </p>
 
 </aside>
 
@@ -24,19 +28,19 @@ $title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
 
         <div class="thumbnails">
             
-<?php
-while ($data = $pictures->fetch())
-{
-?>
+            <?php
+            while ($data = $pictures->fetch())
+            {
+            ?>
 
-            <img class="image" src="public/uploads/<?= $data['src']; ?>" />
-            
+                        <img class="image" alt="images du projet" src="public/uploads/<?= $data['src']; ?>" />
 
-<?php
-}
-            
-$pictures->closeCursor();
-?>
+
+            <?php
+            }
+
+            $pictures->closeCursor();
+            ?>
 
 
         </div>
@@ -45,7 +49,10 @@ $pictures->closeCursor();
             <?= nl2br($project['complete_description']) ?>
         </p>
         
-        <p class="skills"><span>Compétences nécessaires pour ce projet: </span><?= $project['skills'] ?>.</p>
+        <p class="skills">
+            <span>Compétences nécessaires pour ce projet: </span>
+            <?= $project['skills'] ?>.
+        </p>
 
 
 </section>

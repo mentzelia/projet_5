@@ -124,7 +124,10 @@ try {
             
         elseif($_GET['action'] == 'log_out'){
             
-            logOutSession();
+            if(verifSession()){
+            
+                logOutSession();
+            }
         }
         
         elseif($_GET['action'] == 'createNewProject'){
@@ -246,6 +249,7 @@ try {
                 
                 sendMail($name, $email, $message);
             }
+            
         }
         
         elseif($_GET['action'] == 'sendQuotation'){
@@ -261,6 +265,8 @@ try {
                 
                 sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, $firstName, $email, $checkboxSelected);
                 
+            } else { 
+                errorQuotation();
             }
         }
         

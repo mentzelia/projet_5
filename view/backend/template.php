@@ -87,12 +87,13 @@
                         <li>
                             <a href="index.php?action=register">Créer un compte</a>
                         </li>
-                         
+                        
                         <li>
-                            <a href="index.php?action=log_in">Se connecter</a>
-                        </li>
+                            <a href="index.php?action=log_in" >Se connecter</a>
+                        </li> 
+                        
 
-                        <li><a href="index.php?action=log_out">Se déconnecter</a></li>
+                        <li><a href="index.php?action=log_out" >Se déconnecter</a></li>
 
                     </ul>
 
