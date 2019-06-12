@@ -14,7 +14,9 @@ function logOutSession()
     $_SESSION = array();
     session_destroy();
     
-    require('view/backend/logOutView.php');
+    //require('view/backend/logOutView.php');
+    header('Location:index.php?action=log_in');
+   
 }
 
 function getCreateProjectPage(){

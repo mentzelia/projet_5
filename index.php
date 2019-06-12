@@ -18,6 +18,7 @@ function verifSession() {
     $user = $_SESSION['user'];
             
     if(generalVerification($id) AND generalVerification($user)){
+        
         return true;
     }
     

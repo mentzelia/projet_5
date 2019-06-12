@@ -30,4 +30,6 @@
 
 <?php $content = ob_get_clean(); ?>
 
+<?php $connectText = "Retour tableau de bord"; ?>
+
 <?php require('template.php'); ?>

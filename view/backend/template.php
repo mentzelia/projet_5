@@ -89,7 +89,7 @@
                         </li>
                         
                         <li>
-                            <a href="index.php?action=log_in" >Se connecter</a>
+                            <a href="index.php?action=log_in" ><?= $connectText ?></a>
                         </li> 
                         
 
