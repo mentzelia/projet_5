@@ -57,7 +57,7 @@ ob_start();
             <input id="firstName" name="firstName" type="text" required>
             <br/>
             <label for="email">Email </label>
-            <input id="email" name="email" type="email">
+            <input id="email" name="email" type="email" required>
             <br/>
             <p>(*) Obligatoire</p>
         </fieldset>

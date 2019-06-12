@@ -187,6 +187,3 @@ function sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, 
    
 }
 
-function errorQuotation() {
-    require('view/frontend/errorQuotationView.php');
-}

@@ -265,9 +265,7 @@ try {
                 
                 sendQuotation($radioButtonSelected1, $radioButtonSelected2, $lastName, $firstName, $email, $checkboxSelected);
                 
-            } else { 
-                errorQuotation();
-            }
+            }  
         }
         
         

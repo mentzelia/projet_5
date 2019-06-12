@@ -45,9 +45,9 @@ $title = 'Portfolio Virginie Duboscq - '. $project['project_title']; ?>
 
         </div>
 
-        <p>
-            <?= nl2br($project['complete_description']) ?>
-        </p>
+    
+        <?= nl2br($project['complete_description']) ?>
+        
         
         <p class="skills">
             <span>Compétences nécessaires pour ce projet: </span>

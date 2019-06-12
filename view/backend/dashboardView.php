@@ -1,7 +1,6 @@
-<?php $title = 'Portfolio Virginie Duboscq - Tableau de bord';
+<?php $title = 'Portfolio Virginie Duboscq - Tableau de bord'; ?>
 
-ob_start(); 
-?>
+<?php ob_start(); ?>
 
 <p class="back">
     <a href="index.php">Retour</a>
